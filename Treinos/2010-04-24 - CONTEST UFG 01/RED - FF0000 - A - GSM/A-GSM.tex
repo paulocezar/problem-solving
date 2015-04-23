@@ -1,0 +1,92 @@
+% XeLaTeX can use any Mac OS X font. See the setromanfont command below.
+% Input to XeLaTeX is full Unicode, so Unicode characters can be typed directly into the source.
+
+% The next lines tell TeXShop to typeset with xelatex, and to open and save the source with Unicode encoding.
+
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[14pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{a4paper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+
+% Will Robertson's fontspec.sty can be used to simplify font choices.
+% To experiment, open /Applications/Font Book to examine the fonts provided on Mac OS X,
+% and change "Hoefler Text" to any of these choices.
+
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont[Mapping=tex-text]{Hoefler Text}
+\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Gill Sans}
+\setmonofont[Scale=MatchLowercase]{Andale Mono}
+
+\title{Treino 1 - Maratona de Programa\c{c}\~ao }
+\author{Universidade Federal de Goi\'as}
+\date{24/04/2010}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+% For many users, the previous commands will be enough.
+% If you want to directly input Unicode, add an Input Menu or Keyboard to the menu bar 
+% using the International Panel in System Preferences.
+% Unicode must be typeset using a font containing the appropriate characters.
+% Remove the comment signs below for examples.
+
+% \newfontfamily{\A}{Geeza Pro}
+% \newfontfamily{\H}[Scale=0.9]{Lucida Grande}
+% \newfontfamily{\J}[Scale=0.85]{Osaka}
+
+% Here are some multilingual Unicode fonts: this is Arabic text: {\A السلام عليكم}, this is Hebrew: {\H שלום}, 
+% and here's some Japanese: {\J 今日は}.
+
+\section{Problema A - GSM}
+
+\subsection{Descri\c{c}\~ao}
+
+A parte mais importante de uma rede GSM \'e a chamada BTS ( \emph{ Base Transceiver Station} ). Esses transceivers formam zonas chamas c\'elulas (\ termo que deu origem ao nome \emph{telefone celular}\ ) e cada celular se conecta a BTS com o sinal mais forte ( em uma vis\~ao simplificada ). \'E claro que BTSes precisam de bastante aten\c{c}\~ao e t\'ecnicos precisam checar seu funcionamento periodicamente.
+
+T\'ecnicos da ACM se depararam com um problema interessante recentemente. Dado um conjunto de BTSes a visitar, eles precisam encontrar o caminho mais curto para visitar todos os pontos dados e retornar \`a Central. Alguns programadores gastaram v\'arios meses estudandodo esse problema mas n\~ao obtiveram resultados satisfat\'orios. At\'e que um dos programadores encontrou refer\^encis a esse problema em um artigo. Ele descobriu que esse \'e na verdade um problema a muito conhecido, chamado \emph{ Travelling Salesman Problem } - TSP ( Problema do Caixeiro viajante. ) e \'e muito dif\'icil de se resolver. Se tivermos N BTSes \`a visitar,  podemos visit\'a-las em qualquer ordem, tendo assim N! possibilidades pra examinar. A fun\c{c}\~ao que expressa esse n\'umero \'e chamada fatorial, e pode ser computada como o produto $1*2*3*4*...*N$, e esse valor \'e muito grande mesmo para um N relativamente pequeno.
+
+Os programadores se deram conta de que eles jamais conseguiriam resolver o problema, mas como eles j\'a receberam uma verba de pesquisa do governo, eles precisam continuar com os estudos e produzir algum resultado. Portanto, eles come\c{c}aram a estudar o comportamento da fun\c{c}\~ao fatorial.
+
+Eles definiram uma fun\c{c}\~ao Z. Para todo inteiro positivo N,  Z(N) \'e o n\'umero de zeros no final da representa\c{c}\~ao decimal do n\'umero N!
+Eles notaram que essa fun\c{c}\~ao nunca decresce. Se n\'os temos dois n\'umeros $N1 < N2$, $ Z(N1) \leq Z(N2)$. Isso pois \'e imposs\'ivel perder um zero a direita multiplicando-o por qualquer inteiro positivo. Os programadores acharam o comportamento da fun\c{c}\~ao Z bem interessante, e agora est\~ao desenvolvendo um programa de computador capaz de calcular o seu valor de forma eficiente.
+
+
+\subsection{Tarefa}
+Sua tarefa nesse problema \'e ajudar os programadores da ACM e escrever um uma vers\~ao Beta do programa que eles est\~ao desenvolvendo, que calcule o valor de Z(N) de forma eficiente.
+
+\subsection{Entrada}
+A entrada \'e composta por diversos casos teste, cada caso teste corresponde a um inteiro N (\ $0 < N \leq 10^{12} $\ ). A entrada deve ser lida at\'e o final do arquivo ( EOF ).
+
+
+\subsection{Sa\'{\i}da}
+A sa\'{\i}da para cada caso teste ser\'a uma \'unica linha contendo o valor Z(N).
+
+\subsection{Exemplo}
+\subsubsection{Entrada}
+\begin{verbatim}
+3
+60
+100
+1024
+23456
+8735373
+ \end{verbatim}
+\subsubsection{Sa\'{\i}da}
+ \begin{verbatim}
+0
+14
+24
+253
+5861
+2183837
+ \end{verbatim}
+
+
+\end{document}  

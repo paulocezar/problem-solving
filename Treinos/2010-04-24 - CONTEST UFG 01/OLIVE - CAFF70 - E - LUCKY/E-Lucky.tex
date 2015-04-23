@@ -1,0 +1,82 @@
+% XeLaTeX can use any Mac OS X font. See the setromanfont command below.
+% Input to XeLaTeX is full Unicode, so Unicode characters can be typed directly into the source.
+
+% The next lines tell TeXShop to typeset with xelatex, and to open and save the source with Unicode encoding.
+
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[14pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{a4paper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+
+% Will Robertson's fontspec.sty can be used to simplify font choices.
+% To experiment, open /Applications/Font Book to examine the fonts provided on Mac OS X,
+% and change "Hoefler Text" to any of these choices.
+
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont[Mapping=tex-text]{Hoefler Text}
+\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Gill Sans}
+\setmonofont[Scale=MatchLowercase]{Andale Mono}
+
+\title{Treino 1 - Maratona de Programa\c{c}\~ao }
+\author{Universidade Federal de Goi\'as}
+\date{24/04/2010}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+% For many users, the previous commands will be enough.
+% If you want to directly input Unicode, add an Input Menu or Keyboard to the menu bar 
+% using the International Panel in System Preferences.
+% Unicode must be typeset using a font containing the appropriate characters.
+% Remove the comment signs below for examples.
+
+% \newfontfamily{\A}{Geeza Pro}
+% \newfontfamily{\H}[Scale=0.9]{Lucida Grande}
+% \newfontfamily{\J}[Scale=0.85]{Osaka}
+
+% Here are some multilingual Unicode fonts: this is Arabic text: {\A السلام عليكم}, this is Hebrew: {\H שלום}, 
+% and here's some Japanese: {\J 今日は}.
+
+\section{Problema E - Lucky Numbers}
+
+\subsection{Descri\c{c}\~ao}
+Como geralmente competi\c{c}\~oes de programa\c{c}\~ao tem problemas relacionados a deteminadas sequ\^encias, nesse treinamento n\~ao poderia ser diferente.
+Definimos aqui uma sequ\^encia de n\'umeros que vamos chamar de \emph{ Lucky Numbers } ( N\'umeros da Sorte, pelo menos pro primeiro time que acertar ).
+
+A sequ\^encia da sorte \'e a seque\^encia infinita de todos os inteiros, em ordem crescente, que podem ser representados como pot\^encias de 5 ( isto \'e: $5^{k}$ onde k \'e um inteiro positivo ) ou como uma soma de pot\^encias distintas de 5 ( ou seja, $5^{ a1} + 5^{ a2} + 5^{ a3}  + ... $, onde a1, a2, a3, ... s\~ao inteiros positivos distintos ). Todos os n\'umeros na sequ\^encia da sorte s\~ao chamados Lucky Numbers. Os primeiros Lucky Numbers s\~ao: $5, 25, 30, 125, 130, 150, ... $ 
+
+\subsection{Tarefa}
+Dado n, sua tarefa \'e encontrar o n-\'esimo Lucky Number.
+
+\subsection{Entrada}
+A primeira linha da entrada cont\'em um inteiro \textbf{t}, $ t \leq 1000 $,  o n\'umero de casos teste. Ent\~ao, seguem t linhas, cada uma contendo um inteiro \textbf{n}, $1 \leq n \leq 2^{21} $.
+
+\subsection{Sa\'{\i}da}
+Para cada caso de teste, imprima o n-\'esimo lucky number em uma \'unica linha. Nenhuma resposta excede o valor de $2^{64}$.
+
+\subsection{Exemplo}
+\subsubsection{Entrada}
+\begin{verbatim}
+4
+1
+2
+3
+9
+ \end{verbatim}
+\subsubsection{Sa\'{\i}da}
+ \begin{verbatim}
+5
+25
+30
+630
+ \end{verbatim}
+
+
+\end{document}  

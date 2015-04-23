@@ -1,0 +1,84 @@
+% XeLaTeX can use any Mac OS X font. See the setromanfont command below.
+% Input to XeLaTeX is full Unicode, so Unicode characters can be typed directly into the source.
+
+% The next lines tell TeXShop to typeset with xelatex, and to open and save the source with Unicode encoding.
+
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[14pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{a4paper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+
+% Will Robertson's fontspec.sty can be used to simplify font choices.
+% To experiment, open /Applications/Font Book to examine the fonts provided on Mac OS X,
+% and change "Hoefler Text" to any of these choices.
+
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont[Mapping=tex-text]{Hoefler Text}
+\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Gill Sans}
+\setmonofont[Scale=MatchLowercase]{Andale Mono}
+
+\title{Treino 1 - Maratona de Programa\c{c}\~ao }
+\author{Universidade Federal de Goi\'as}
+\date{24/04/2010}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+% For many users, the previous commands will be enough.
+% If you want to directly input Unicode, add an Input Menu or Keyboard to the menu bar 
+% using the International Panel in System Preferences.
+% Unicode must be typeset using a font containing the appropriate characters.
+% Remove the comment signs below for examples.
+
+% \newfontfamily{\A}{Geeza Pro}
+% \newfontfamily{\H}[Scale=0.9]{Lucida Grande}
+% \newfontfamily{\J}[Scale=0.85]{Osaka}
+
+% Here are some multilingual Unicode fonts: this is Arabic text: {\A السلام عليكم}, this is Hebrew: {\H שלום}, 
+% and here's some Japanese: {\J 今日は}.
+
+\section{Problema D - Convers\~ao Hexadecimal}
+
+\subsection{Descri\c{c}\~ao}
+
+Durante um treinamento o t\'ecnico da equipe ``Noob Inside" ficou muito triste ao perceber que os membros da equipe n\~ao sabiam praticamente nada quando o assunto era convers\~ao de bases. Ap\'os uma bela aula sobre bases num\'ericas, ele passou alguns exerc\'icios para seus pupilos praticarem.
+
+Os competidores da ``Noob Inside" devem escrever um programa capaz de converter um n\'umero na base Hexadecimal sem sinal para seu correspondente Octal ( base 8 ).
+
+Nota: Um valor hexadecimal \'e uma maneira de representar n\'umeros na base $16$. Os digitos 0-9 continuam correspondendo aos valores 0-9, e s\~ao acrescentados os digitos A-F, com A correspondendo ao $10$, B ao $11$, etc.. ( F corresponde ao $15$ ).
+
+Por exemplo, o n\'umero hexadeciam A$10$B corresponde ao decimal $ 10*16^3 + 1*16^2 + 0*16^1 + 11*16^0 = 41227$. O correspondente octal seria o  $120413$,  uma vez que $ 1*8^5 + 2*8^4 + 0*8^3 + 4*8^2 + 1*8^1 + 3*8^0 = 41227 $.
+
+\subsection{Tarefa}
+
+Sua tarefa \'e ajudar os membros da ``Noob Inside" que n\~ao est\~ao conseguindo resolver esse problema. Portanto, dado um n\'umero Hexadecimal de at\'e $100000$ digitos, escreva um programa capaz de convert\^e-lo para octal.
+
+\subsection{Entrada}
+A primeira linha da entrada cont\'em um inteiro T ( $0 < T \leqslant 50$\ ), especificando o n\'umero de casos de teste. Cada caso teste \'e composto por uma \'unica linha contendo um n\'umero na base hexadecimal de at\'e $100000$ digitos e sem zeros \`a esquerda. Ou seja, $1$AB ao inv\'es de $001$AB.
+
+
+\subsection{Sa\'{\i}da}
+A sa\'{\i}da para cada caso teste ser\'a uma \'unica linha contendo o valor octal correspondente a entrada, sem zeros a esquerda. Se a entrada for $0$ a sa\'ida deve ser $0$.
+
+\subsection{Exemplo}
+\subsubsection{Entrada}
+\begin{verbatim}
+2
+A10B
+123ABC
+ \end{verbatim}
+\subsubsection{Sa\'{\i}da}
+ \begin{verbatim}
+120413
+4435274
+ \end{verbatim}
+
+
+\end{document}  

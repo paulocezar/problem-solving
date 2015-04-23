@@ -1,0 +1,98 @@
+% XeLaTeX can use any Mac OS X font. See the setromanfont command below.
+% Input to XeLaTeX is full Unicode, so Unicode characters can be typed directly into the source.
+
+% The next lines tell TeXShop to typeset with xelatex, and to open and save the source with Unicode encoding.
+
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[14pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{a4paper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+
+% Will Robertson's fontspec.sty can be used to simplify font choices.
+% To experiment, open /Applications/Font Book to examine the fonts provided on Mac OS X,
+% and change "Hoefler Text" to any of these choices.
+
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont[Mapping=tex-text]{Hoefler Text}
+\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Gill Sans}
+\setmonofont[Scale=MatchLowercase]{Andale Mono}
+
+\title{Treino 1 - Maratona de Programa\c{c}\~ao }
+\author{Universidade Federal de Goi\'as}
+\date{24/04/2010}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+% For many users, the previous commands will be enough.
+% If you want to directly input Unicode, add an Input Menu or Keyboard to the menu bar 
+% using the International Panel in System Preferences.
+% Unicode must be typeset using a font containing the appropriate characters.
+% Remove the comment signs below for examples.
+
+% \newfontfamily{\A}{Geeza Pro}
+% \newfontfamily{\H}[Scale=0.9]{Lucida Grande}
+% \newfontfamily{\J}[Scale=0.85]{Osaka}
+
+% Here are some multilingual Unicode fonts: this is Arabic text: {\A السلام عليكم}, this is Hebrew: {\H שלום}, 
+% and here's some Japanese: {\J 今日は}.
+
+\section{Problema C - Dinheiro importa}
+
+\subsection{Descri\c{c}\~ao}
+
+
+Nossa triste hist\'oria come\c{c}a com um grupo de grandes amigos. Juntos, eles fizeram uma viagem ao distante pa\'{\i}s da Quadrad\^onia. Durante sua estada no pa\'{\i}s, v\'arios eventos que s\~ao muito horr\'{\i}veis pra ser mencionados ocorreram. O resultado ? A \'ultima noite da viagem terminou com uma vasta troca de ``Nunca mais quero te ver de novo!''s. Um c\'alculo r\'apido indica que a frase pode ter sido dita quase 50 milh\~oes de vezes!
+
+De volta ao Brasil, os integrantes do grupo de ex-amigos perceberam que n\~ao haviam dividido os custos da viagem de forma uniforme. Alguns ficaram devendo  v\'arios milhares, e regularizar as d\'{\i}vidas acabou se tornando um problema complexo, pois como muitos no grupo n\~ao querem nem falar com alguns dos ex-amigos, imagine dar dinheiro aos mesmos.
+
+Naturalmente sempre h\'a alguem para ajudar, e nesse caso, a criatura com um bom cora\c{c}\~ao \'e voc\^e. Ap\'os ficar sabendo da trag\'edia, 
+voc\^e perguntou a cada pessoa do grupo quanto ela ficou devendo, ou quanto est\~ao devendo pra ela, al\'em de, com quais pessoas do grupo ela contiua mantendo contato, e agora, com base nessas informa\c{c}\~oes, vai informar para o grupo se eles ser\~ao ou n\~ao capazes de quitar suas dividas.
+
+\subsection{Tarefa}
+Dadas as quantias que cada um pegou emprestado ou ficou devendo, sua tarefa \'e determinar se \'e poss\'{\i}vel ou n\~ao que as d\'{\i}vidas sejam quitadas sem que pessoas que n\~ao est\~ao mais conversando tenham quem interagir.
+
+\subsection{Entrada}
+A primeira linha cont\'em um inteiro T ( $0 \leqslant T \leqslant 30$\ ), especificando o n\'umero de casos de teste.
+
+Os casos de teste tem a seguinte estrutura: a primeira linha de cada caso de teste cont\'em dois inteiros N ($\ 2 \leqslant N \leqslant 10000\ $), e M ($\ 0 \leqslant M \leqslant 50000\ $), o n\'umero de amigos, e de pares de pessoas que ainda mant\'em rela\c{c}\~oes de amizade. Ent\~ao, seguem N linhas, cada uma contendo um inteiro V (\ $-10000 \leqslant V \leqslant 10000\ $) indicando quanto cada pessoa deve receber ( ou pagar se $ V < 0\ $ ). A soma desses valores \'e zero. As pr\'oximas M linhas descrevem as amizades que realmente eram verdadeiras e permaneceram depois de todos os problemas. Cada amizade \'e descrita por dois inteiros X, e Y (\ $0 \leqslant x < y \leqslant N-1$\ ) indicando que as pessoas X e Y permanecem amigas.
+
+\subsection{Sa\'{\i}da}
+A sa\'{\i}da para cada caso teste ser\'a uma \'unica linha contendo ``POSSIVEL" ou ``IMPOSSIVEL".
+
+\subsection{Exemplo}
+\subsubsection{Entrada}
+\begin{verbatim}
+2
+5 3
+100
+-75
+-25
+-42
+42
+0 1
+1 2
+3 4
+4 2
+15
+20
+-10
+-25
+0 2
+1 3
+ \end{verbatim}
+\subsubsection{Sa\'{\i}da}
+ \begin{verbatim}
+ POSSIVEL
+ IMPOSSIVEL
+ \end{verbatim}
+
+
+\end{document}  

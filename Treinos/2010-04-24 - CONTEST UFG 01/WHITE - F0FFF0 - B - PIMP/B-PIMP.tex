@@ -1,0 +1,91 @@
+% XeLaTeX can use any Mac OS X font. See the setromanfont command below.
+% Input to XeLaTeX is full Unicode, so Unicode characters can be typed directly into the source.
+
+% The next lines tell TeXShop to typeset with xelatex, and to open and save the source with Unicode encoding.
+
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[14pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{a4paper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+
+% Will Robertson's fontspec.sty can be used to simplify font choices.
+% To experiment, open /Applications/Font Book to examine the fonts provided on Mac OS X,
+% and change "Hoefler Text" to any of these choices.
+
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont[Mapping=tex-text]{Hoefler Text}
+\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Gill Sans}
+\setmonofont[Scale=MatchLowercase]{Andale Mono}
+
+\title{Treino 1 - Maratona de Programa\c{c}\~ao }
+\author{Universidade Federal de Goi\'as}
+\date{24/04/2010}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+% For many users, the previous commands will be enough.
+% If you want to directly input Unicode, add an Input Menu or Keyboard to the menu bar 
+% using the International Panel in System Preferences.
+% Unicode must be typeset using a font containing the appropriate characters.
+% Remove the comment signs below for examples.
+
+% \newfontfamily{\A}{Geeza Pro}
+% \newfontfamily{\H}[Scale=0.9]{Lucida Grande}
+% \newfontfamily{\J}[Scale=0.85]{Osaka}
+
+% Here are some multilingual Unicode fonts: this is Arabic text: {\A السلام عليكم}, this is Hebrew: {\H שלום}, 
+% and here's some Japanese: {\J 今日は}.
+
+\section{Problema B - PIMP My Ride}
+
+\subsection{Descri\c{c}\~ao}
+Hoje, existem muitos carros, motos, caminh\~oes e outros ve\'iculos l\'a fora, nas ruas que precisam seriamente de algumas remodela\c{c}\~oes.
+Para a sorte desses ve\'iculos ( ou de seus donos ), um programa na TV tem tomado conta desses velhos calhambeques, selecionando periodicamente alguns felizardos para participarem de um quadro onde sua lata velha \'e completamente reformada.
+Os v\'arios servi\c{c}os que devem ser feitos no carro, como pintura, decora\c{c}\~ao de interior, alinhamento, montagem de som, etc; s\~ao realizados em diferentes garagens. E mais, quanto melhor a apar\^encia do carro, mais caro eles costumam cobrar. Por exemplo, um pintor geralmente cobra mais quando vai pintar um carro com o interior todo de couro. Todas essas sobretaxas, dependen de qual servi\c{c}o est\'a sendo feito e de quais servi\c{c}os foram feitos antes.
+Para saber quais carros escolher para participar do programa, a emissora prefere os que tenham um custo menor para realizar todos os servi\c{c}os necess\'arios, e para isso precisa da sua ajuda.
+
+\subsection{Tarefa}
+Servi\c{c}os individuais s\~ao numerados de $1$ a N. Dados o pre\c{c}o base p para cada servi\c{c}o e a sobretaxa s ( em R\$ ) para todo par de servi\c{c}os ( i, j ) com $i \neq j$, significando que voc\^e deve pagar s R\$ adicionais pelo servi\c{c}o i, se e somente se o servi\c{c}o j tiver sido realizado antes, voc\^e deve calcular o custo m\'inimo total necess\'ario para \emph{ PIMPAR } o carro por completo.
+
+\subsection{Entrada}
+A primeira linha cont\'em o n\'umero de casos teste. Cada caso teste \'e composto de um inteiro N, $1 \leqslant n \leqslant 14$; o n\'umero de servi\c{c}os. Em seguida, N linhas, cada uma contendo exatamente N inteiros. A i-\'esimo linha cont\'em as sobretaxas que devem ser pagas na garagem i para realizar o i-\'esimo servi\c{c}o e o valor base para realizar o i-\'esimo servi\c{c}o. Mais precisamente, na i-\'esima linha, o i-\'esimo inteiro \'e o pre\c{c}o base para realizar o servi\c{c}o i e o j-\'esimo inteiro (\ $j \neq i$\ ) \'e a sobretaxa para o servi\c{c}o i que \'e cobrada se o servi\c{c}o j foi realizado antes. Os valores ser\~ao inteiros n\~ao negativos menores ou iguais a $100000$.
+
+
+\subsection{Sa\'{\i}da}
+A sa\'ida de cada caso teste \'e composta por $3$ linhas.
+A primeira linha cont\'em  ``Teste \#i:" onde i e o n\'umero do caso de teste come\c{c}ando de $1$.
+Uma \'unica linha contendo a frase: “Voce foi oficialmente pimpado por apenas R\$ p.", onde p \'e o pre\c{c}o m\'inimo total.
+E por \'ultimo, uma linha em branco finaliza a sa\'ida.
+
+\subsection{Exemplo}
+\subsubsection{Entrada}
+\begin{verbatim}
+2
+2
+10 10
+9000 10
+3
+14 23 0
+0 14 0
+1000 9500 14
+ \end{verbatim}
+\subsubsection{Sa\'{\i}da}
+ \begin{verbatim}
+Teste #1:
+Voce foi oficialmente pimpado por apenas R$ 30.
+
+Teste #2:
+Voce foi oficialmente pimpado por apenas R$ 42.
+
+ \end{verbatim}
+
+
+\end{document}  
