@@ -1,0 +1,160 @@
+<td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="5" border="0"></td>
+                 <td background="/i/steel_gray_bg.gif" class="statTextBig" colspan="7" height="18">&nbsp;Problem Statement for Average</td>
+                   
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td class="problemText" valign="middle" align="left">
+                      
+              		<table><tbody>
+<tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText">
+<p>
+You have acquired a list of the math and verbal test scores from all the children in the county.
+Write a class Average that contains a method belowAvg that takes two int[],
+<b>math</b> and <b>verbal</b>, representing the math and verbal scores of all of the children in the county, and returns the number of children who have a composite score
+which is below average in the county.  
+</p>
+<p>
+The composite score is defined to be the sum of a child's math and verbal scores.
+</p>
+</td>
+</tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr>
+<td class="statText">Class:</td>
+<td class="statText">Average</td>
+</tr>
+<tr>
+<td class="statText">Method:</td>
+<td class="statText">belowAvg</td>
+</tr>
+<tr>
+<td class="statText">Parameters:</td>
+<td class="statText">int[], int[]</td>
+</tr>
+<tr>
+<td class="statText">Returns:</td>
+<td class="statText">int</td>
+</tr>
+<tr>
+<td class="statText">Method signature:</td>
+<td class="statText">int belowAvg(int[] math, int[] verbal)</td>
+</tr>
+<tr><td colspan="2" class="statText">(be sure your method is public)</td></tr>
+</tbody></table></td>
+</tr>
+<tr><td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td class="statText"></td></tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">each element of <b>math</b> corresponds to the element with the same index in <b>verbal</b>.</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">the number of children is the length of <b>math</b> and <b>verbal</b>.</td>
+</tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">
+<b>math</b> and <b>verbal</b> will contain the same number of elements.</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">
+<b>math</b> will contain between 1 and 50 elements, inclusive.</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">each value in <b>math</b> and in <b>verbal</b> is between 200 and 800, inclusive.</td>
+</tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr>
+<tr>
+<td align="center" nowrap class="statText">0)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody>
+<tr><td class="statText"><pre>{200,250,700,700}</pre></td></tr>
+<tr><td class="statText"><pre>{400,400,400,400}</pre></td></tr>
+</tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 2</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">The composite scores of the 4 children are 600, 650, 1100, and 1100 and the average composite score is 862.5, so 2 of the children are below average.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">1)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody>
+<tr><td class="statText"><pre>{500,400}</pre></td></tr>
+<tr><td class="statText"><pre>{300,400}</pre></td></tr>
+</tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 0</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">Both children have the same composite score 800 which is also the average. Neither are below average</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">2)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody>
+<tr><td class="statText"><pre>{293}</pre></td></tr>
+<tr><td class="statText"><pre>{799}</pre></td></tr>
+</tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 0</pre></td></tr>
+<tr><td class="statText"></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">3)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody>
+<tr><td class="statText"><pre>{400,400,400,400,400,400,401}</pre></td></tr>
+<tr><td class="statText"><pre>{400,400,400,400,400,400,400}</pre></td></tr>
+</tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 6</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">The average composite score is just above 800, so 6 of the 7 children are below average.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+</tbody></table>
+<hr>
+<p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2006, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="3" border="0"></td>
+                 <td background="/i/steel_blue_bg.gif" class="statText" colspan="7"><img src="/i/clear.gif" alt="" width="1" height="5" border="0"></td>
+                 <td class="statText" colspan="7"><img src="/i/clear.gif" alt="" width="1" height="16" border="0"></td>
+                 <td class="statText" colspan="7">
+                      This problem was used for:
+   
+   	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/tc?module=ProblemDetail&amp;rd=4165&amp;pm=818">Single Round Match 89 Round 1 - Division II, Level One</a>
+   
+   	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/tc?module=ProblemDetail&amp;rd=5851&amp;pm=818">Single Round Match 205 Round 1 - Division II, Level One</a>
+   
+                   
+                   </td>
+                 

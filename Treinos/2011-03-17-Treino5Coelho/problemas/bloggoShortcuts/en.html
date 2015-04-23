@@ -1,0 +1,207 @@
+<td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="5" border="0"></td>
+                 <td background="/i/steel_gray_bg.gif" class="statTextBig" colspan="7" height="18">&nbsp;Problem Statement for bloggoShortcuts</td>
+                   
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td class="problemText" valign="middle" align="left">
+                      
+              		<table><tbody>
+<tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText">
+<p>
+
+You are helping to develop a weblog-management system called
+bloggo. Although bloggo pushes all content to the front end of a
+website in HTML, not all content authors enjoy using HTML tags in their
+text. To make their lives easier, bloggo offers a simple syntax called
+<i>shortcuts</i> to achieve some HTML textual effects. Your job is to
+take a document written with shortcuts and translate it into proper HTML.
+
+</p>
+<p>
+
+One shortcut is used to make italicized text. HTML does this with
+the &lt;i&gt; and &lt;/i&gt; tags, but in bloggo, an author can simply
+enclose a piece of text using two instances of the underscore character,
+'_'. Thus, where a content author writes
+
+</p>
+<pre>
+  You _should_ see the baby elephant at the zoo!
+</pre>
+<p>
+
+bloggo will publish the following instead.
+
+</p>
+<pre>
+  You &lt;i&gt;should&lt;/i&gt; see the baby elephant at the zoo!
+</pre>
+<p>
+
+Another shortcut serves to render text in boldface, which HTML
+accomplishes with &lt;b&gt; and &lt;/b&gt; tags. Bloggo lets content
+authors do the same with paired instances of the asterisk character,
+'*'. When a content author writes the text
+
+</p>
+<pre>
+  Move it from *Receiving* to *Accounts Payable*.
+</pre>
+<p>
+
+it will end up on the website as
+
+</p>
+<pre>
+  Move it from &lt;b&gt;Receiving&lt;/b&gt; to &lt;b&gt;Accounts Payable&lt;/b&gt;.
+</pre> <p>
+
+Given a String, <b>text</b>, containing zero or more usages
+of the italic and boldface shortcuts, translate it into HTML
+as demonstrated by the examples above. There will be an even number
+of underscores and of asterisks in <b>text</b>, respectively, and the
+spans of text enclosed by successive pairs of these characters will not
+overlap. To render a span of text in italics in HTML, you must start
+with the &lt;i&gt; tag and end with the &lt;/i&gt; tag. For boldface
+text, start with &lt;b&gt; and end with &lt;/b&gt;. After rendering all
+shortcuts in HTML, return the resulting text as a String.
+
+</p>
+</td>
+</tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr>
+<td class="statText">Class:</td>
+<td class="statText">bloggoShortcuts</td>
+</tr>
+<tr>
+<td class="statText">Method:</td>
+<td class="statText">expand</td>
+</tr>
+<tr>
+<td class="statText">Parameters:</td>
+<td class="statText">String</td>
+</tr>
+<tr>
+<td class="statText">Returns:</td>
+<td class="statText">String</td>
+</tr>
+<tr>
+<td class="statText">Method signature:</td>
+<td class="statText">String expand(String text)</td>
+</tr>
+<tr><td colspan="2" class="statText">(be sure your method is public)</td></tr>
+</tbody></table></td>
+</tr>
+<tr><td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td class="statText"></td></tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">
+<b>text</b> is between 1 and 50 characters long, inclusive</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">the only characters allowed in <b>text</b> are the alphabetic characters 'a' to 'z' and 'A' to 'Z', the underscore '_', the asterisk '*', the space character, and the punctuation symbols ',', ';', '.', '!', '?', '-', '(', and ')'.</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">the underscore '_' occurs in <b>text</b> an even number of times</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">the asterisk '*' occurs in <b>text</b> an even number of times</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">no substring of <b>text</b> enclosed by a balanced pair of underscores or by a balanced pair of asterisks may contain any further underscores or asterisks</td>
+</tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr>
+<tr>
+<td align="center" nowrap class="statText">0)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody><tr><td class="statText"><pre>"You _should_ see the new walrus at the zoo!"</pre></td></tr></tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: "You &lt;i&gt;should&lt;/i&gt; see the new walrus at the zoo!"</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">A walrus is a large, blubbery cousin of the seal.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">1)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody><tr><td class="statText"><pre>"Move it from *Accounts Payable* to *Receiving*."</pre></td></tr></tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: "Move it from &lt;b&gt;Accounts Payable&lt;/b&gt; to &lt;b&gt;Receiving&lt;/b&gt;."</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">Notice that a boldface span may enclose several words.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">2)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody><tr><td class="statText"><pre>"I saw _Chelydra serpentina_ in *Centennial Park*."</pre></td></tr></tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: "I saw &lt;i&gt;Chelydra serpentina&lt;/i&gt; in &lt;b&gt;Centennial Park&lt;/b&gt;."</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">One piece of text may include italics as well as boldface.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">3)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody><tr><td class="statText"><pre>" _ _ __  _ yabba dabba _   *  dooooo  * ****"</pre></td></tr></tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: " &lt;i&gt; &lt;/i&gt; &lt;i&gt;&lt;/i&gt;  &lt;i&gt; yabba dabba &lt;/i&gt;   &lt;b&gt;  dooooo  &lt;/b&gt; &lt;b&gt;&lt;/b&gt;&lt;b&gt;&lt;/b&gt;"</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">Shortcuts may enclose spaces or nothing at all.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">4)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody><tr><td class="statText"><pre>"_now_I_know_*my*_ABC_next_time_*sing*it_with_me"</pre></td></tr></tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 
+"&lt;i&gt;now&lt;/i&gt;I&lt;i&gt;know&lt;/i&gt;&lt;b&gt;my&lt;/b&gt;&lt;i&gt;ABC&lt;/i&gt;next&lt;i&gt;time&lt;/i&gt;&lt;b&gt;sing&lt;/b&gt;it&lt;i&gt;with&lt;/i&gt;me"</pre></td></tr>
+<tr><td class="statText"></td></tr>
+</tbody></table></td>
+</tr>
+</tbody></table>
+<hr>
+<p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2006, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="3" border="0"></td>
+                 <td background="/i/steel_blue_bg.gif" class="statText" colspan="7"><img src="/i/clear.gif" alt="" width="1" height="5" border="0"></td>
+                 <td class="statText" colspan="7"><img src="/i/clear.gif" alt="" width="1" height="16" border="0"></td>
+                 <td class="statText" colspan="7">
+                      This problem was used for:
+   
+   	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/tc?module=ProblemDetail&amp;rd=5860&amp;pm=3020">Single Round Match 214 Round 1 - Division II, Level One</a>
+   
+                   
+                   </td>
+                 

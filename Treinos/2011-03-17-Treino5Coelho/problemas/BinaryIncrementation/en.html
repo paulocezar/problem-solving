@@ -1,0 +1,158 @@
+<td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="5" border="0"></td>
+                 <td background="/i/steel_gray_bg.gif" class="statTextBig" colspan="7" height="18">&nbsp;Problem Statement for BinaryIncrementation</td>
+                   
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td class="problemText" valign="middle" align="left">
+                      
+              		<table><tbody>
+<tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText">
+<p>
+The binary numeral system (base 2 numerals) represents numeric values using two symbols: 0 and 1. 
+Counting in binary is similar to counting in any other number system.
+If you want to increase a number by 1, try to increase its last digit by 1.  
+If this fails, set the last digit to zero, and try to increase the previous digit, 
+and so on, until you succeed.
+</p>
+
+<p>
+For example, the decimal sequence:<br><br>
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, ...<br><br>
+converted to binary looks as follows:<br><br>
+1, 10, 11, 100, 101, 110, 111, 1000, 1001, 1010, 1011, ...
+</p>
+
+<p>
+You are given a String <b>x</b> that contains the binary representation of a positive integer X.
+Write a method that will return a String containing the binary representation of (X+1).
+The returned String must not contain leading zeroes.
+</p>
+</td>
+</tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr>
+<td class="statText">Class:</td>
+<td class="statText">BinaryIncrementation</td>
+</tr>
+<tr>
+<td class="statText">Method:</td>
+<td class="statText">plusOne</td>
+</tr>
+<tr>
+<td class="statText">Parameters:</td>
+<td class="statText">String</td>
+</tr>
+<tr>
+<td class="statText">Returns:</td>
+<td class="statText">String</td>
+</tr>
+<tr>
+<td class="statText">Method signature:</td>
+<td class="statText">String plusOne(String x)</td>
+</tr>
+<tr><td colspan="2" class="statText">(be sure your method is public)</td></tr>
+</tbody></table></td>
+</tr>
+<tr><td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td class="statText"></td></tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">
+<b>x</b> will contain between 1 and 30 characters, inclusive.</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">Each character in <b>x</b> will be a one ('1') or a zero ('0').</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">The first character in <b>x</b> will be a one ('1').</td>
+</tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr>
+<tr>
+<td align="center" nowrap class="statText">0)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody><tr><td class="statText"><pre>"10011"</pre></td></tr></tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: "10100"</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">"10011" is binary for 16+2+1 = 19. The next integer is 20 = 16+4, which is "10100" in binary.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">1)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody><tr><td class="statText"><pre>"10000"</pre></td></tr></tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: "10001"</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText"></td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">2)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody><tr><td class="statText"><pre>"1111"</pre></td></tr></tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: "10000"</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">Be careful not to miss the case when the result is a power of two.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">3)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody><tr><td class="statText"><pre>"1"</pre></td></tr></tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: "10"</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText"></td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">4)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody><tr><td class="statText"><pre>"101010101010101010101010101010"</pre></td></tr></tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: "101010101010101010101010101011"</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText"></td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+</tbody></table>
+<hr>
+<p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2006, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="3" border="0"></td>
+                 <td background="/i/steel_blue_bg.gif" class="statText" colspan="7"><img src="/i/clear.gif" alt="" width="1" height="5" border="0"></td>
+                 <td class="statText" colspan="7"><img src="/i/clear.gif" alt="" width="1" height="16" border="0"></td>
+                 <td class="statText" colspan="7">
+                      This problem was used for:
+   
+   	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/tc?module=ProblemDetail&amp;rd=10662&amp;pm=7385">Single Round Match 338 Round 1 - Division II, Level One</a>
+   
+                   
+                   </td>
+                 

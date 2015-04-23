@@ -1,0 +1,163 @@
+<td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="5" border="0"></td>
+                 <td background="/i/steel_gray_bg.gif" class="statTextBig" colspan="7" height="18">&nbsp;Problem Statement for AzimuthMonitoring</td>
+                   
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td class="problemText" valign="middle" align="left">
+                      
+              		<table><tbody>
+<tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText">A robot is moving in a plane following a set of instructions.<br><br><br><br>
+The following instructions are possible (quotes for clarity only):<br><br>
+"LEFT" - turn left 90 degrees<br><br>
+"RIGHT" - turn right 90 degrees<br><br>
+"TURN AROUND" - turn around (a 180 degree turn)<br><br>
+"LEFT X" - turn left X degrees, where X is a positive integer<br><br>
+"RIGHT X" - turn right X degrees, where X is a positive integer<br><br>
+"HALT" - stop executing instructions; further instructions are not executed<br><br><br><br>
+You are given a String[] containing the robot's instructions. Initially, the robot is facing north. Return the robot's final azimuth - the angle between north and the direction the robot is facing.  Azimuth is always measured clockwise, and is a number between 0, inclusive, and 360, exclusive.  For example, west corresponds to azimuth 270.</td>
+</tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr>
+<td class="statText">Class:</td>
+<td class="statText">AzimuthMonitoring</td>
+</tr>
+<tr>
+<td class="statText">Method:</td>
+<td class="statText">getAzimuth</td>
+</tr>
+<tr>
+<td class="statText">Parameters:</td>
+<td class="statText">String[]</td>
+</tr>
+<tr>
+<td class="statText">Returns:</td>
+<td class="statText">int</td>
+</tr>
+<tr>
+<td class="statText">Method signature:</td>
+<td class="statText">int getAzimuth(String[] instructions)</td>
+</tr>
+<tr><td colspan="2" class="statText">(be sure your method is public)</td></tr>
+</tbody></table></td>
+</tr>
+<tr><td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td class="statText"></td></tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">Turning right corresponds to turning clockwise, turning left corresponds to turning counterclockwise.</td>
+</tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">
+<b>instructions</b> will contain between 1 and 50 elements, inclusive.</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">Each element of <b>instructions</b> will be a valid instruction, as listed in the problem statement.</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">In an instruction of the form "LEFT X" or "RIGHT X", X will be an integer between 1 and 179, inclusive, with no leading zeroes.</td>
+</tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr>
+<tr>
+<td align="center" nowrap class="statText">0)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody><tr><td class="statText"><pre>{"RIGHT"}</pre></td></tr></tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 90</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">Turning 90 degrees right changes the azimuth from 0 to 90.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">1)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody><tr><td class="statText"><pre>{"LEFT", "LEFT", "TURN AROUND"}</pre></td></tr></tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 0</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">After turning left, the robot is facing west (azimuth 270). After turning left again, the robot is facing south (azimuth 180). Finally, turning around makes the robot face north, azimuth 0.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">2)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody><tr><td class="statText"><pre>{"LEFT 5", "RIGHT 10", "LEFT 15", "RIGHT 20", "LEFT 25", "RIGHT 30", "LEFT 35", "RIGHT 40"}</pre></td></tr></tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 20</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">There are four pairs of instructions, each pair making the robot turn right 5 degrees.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">3)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody><tr><td class="statText"><pre>{"RIGHT 59", "RIGHT", "RIGHT", "HALT", "LEFT", "LEFT", "LEFT"}</pre></td></tr></tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 239</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">The fourth instruction is "HALT", thus none of the following "LEFT" instructions are executed.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">4)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody><tr><td class="statText"><pre>{"TURN AROUND", "HALT", "LEFT 5", "HALT", "LEFT 5", "HALT"}</pre></td></tr></tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 180</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">Note that there might be more then one "HALT" instruction.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">5)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody><tr><td class="statText"><pre>{"LEFT", "LEFT", "LEFT", "LEFT", "LEFT", "HALT"}</pre></td></tr></tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 270</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">After the first 4 turns the robot is facing north again, and the fifth instruction turns him west. The last instruction doesn't change anything.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+</tbody></table>
+<hr>
+<p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2006, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="3" border="0"></td>
+                 <td background="/i/steel_blue_bg.gif" class="statText" colspan="7"><img src="/i/clear.gif" alt="" width="1" height="5" border="0"></td>
+                 <td class="statText" colspan="7"><img src="/i/clear.gif" alt="" width="1" height="16" border="0"></td>
+                 <td class="statText" colspan="7">
+                      This problem was used for:
+   
+   	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/tc?module=ProblemDetail&amp;rd=10772&amp;pm=8027">Single Round Match 360 Round 1 - Division II, Level One</a>
+   
+                   
+                   </td>
+                 

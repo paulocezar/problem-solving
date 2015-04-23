@@ -1,0 +1,151 @@
+<td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="5" border="0"></td>
+                 <td background="/i/steel_gray_bg.gif" class="statTextBig" colspan="7" height="18">&nbsp;Problem Statement for AccountBalance</td>
+                   
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td class="problemText" valign="middle" align="left">
+                      
+              		<table><tbody>
+<tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText">
+<p>You are working for the financial institution TopBank, and you have been tasked with writing a module that will take an initial account balance, along with a list of that day's transactions, and return the ending balance for the day.</p>
+
+<p>Each transaction will be either a credit, which adds funds to the account, or a debit, which removes funds from the account.  If a debit exceeds the available funds at the time, then the account balance will go negative.  You will be given an int <b>startingBalance</b>, the initial account balance.  You will also be given a String[] <b>transactions</b>, the list of transactions for the day.  Each element of <b>transactions</b> will be in the form "<i>type</i> <i>amount</i>" (quotes added for clarity).  Each <i>type</i> will be 'C' or 'D', for credit or debit, respectively.  Each <i>amount</i> will be an integer between 1 and 1000000, inclusive, with no leading zeros.  You are to return an int representing the ending balance after processing all of the transactions.</p>
+
+</td>
+</tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr>
+<td class="statText">Class:</td>
+<td class="statText">AccountBalance</td>
+</tr>
+<tr>
+<td class="statText">Method:</td>
+<td class="statText">processTransactions</td>
+</tr>
+<tr>
+<td class="statText">Parameters:</td>
+<td class="statText">int, String[]</td>
+</tr>
+<tr>
+<td class="statText">Returns:</td>
+<td class="statText">int</td>
+</tr>
+<tr>
+<td class="statText">Method signature:</td>
+<td class="statText">int processTransactions(int startingBalance, String[] transactions)</td>
+</tr>
+<tr><td colspan="2" class="statText">(be sure your method is public)</td></tr>
+</tbody></table></td>
+</tr>
+<tr><td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td class="statText"></td></tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">
+<b>startingBalance</b> will be between 0 and 1000000, inclusive.</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">
+<b>transactions</b> will have between 0 and 50 elements, inclusive.</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">Each element of <b>transactions</b> will be formatted as "<i>type</i> <i>amount</i>" (quotes added for clarity).</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">Each <i>type</i> will be 'C' or 'D'.</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">Each <i>amount</i> will represent an integer between 1 and 1000000, inclusive, with no leading zeros.</td>
+</tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr>
+<tr>
+<td align="center" nowrap class="statText">0)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody>
+<tr><td class="statText"><pre>100</pre></td></tr>
+<tr><td class="statText"><pre>{"C 1000", "D 500", "D 350"}</pre></td></tr>
+</tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 250</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">This person had 100 dollars, got their paycheck, then went shopping at two different stores.  100 + 1000 - 500 - 350 = 250.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">1)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody>
+<tr><td class="statText"><pre>100</pre></td></tr>
+<tr><td class="statText"><pre>{}</pre></td></tr>
+</tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 100</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">With no transactions, the balance doesn't change by the end of the day.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">2)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody>
+<tr><td class="statText"><pre>100</pre></td></tr>
+<tr><td class="statText"><pre>{"D 50", "D 20", "D 40"}</pre></td></tr>
+</tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: -10</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">Uh oh!  This person's account is overdrawn.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">3)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody>
+<tr><td class="statText"><pre>53874</pre></td></tr>
+<tr><td class="statText"><pre>{"D 1234", "C 987", "D 2345", "C 654", "D 6789", "D 34567"}</pre></td></tr>
+</tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 10580</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">Several transactions of both types.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+</tbody></table>
+<hr>
+<p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2006, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="3" border="0"></td>
+                 <td background="/i/steel_blue_bg.gif" class="statText" colspan="7"><img src="/i/clear.gif" alt="" width="1" height="5" border="0"></td>
+                 <td class="statText" colspan="7"><img src="/i/clear.gif" alt="" width="1" height="16" border="0"></td>
+                 <td class="statText" colspan="7">
+                      This problem was used for:
+   
+   	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/tc?module=ProblemDetail&amp;rd=9809&amp;pm=6036">Single Round Match 288 Round 1 - Division II, Level One</a>
+   
+                   
+                   </td>
+                 

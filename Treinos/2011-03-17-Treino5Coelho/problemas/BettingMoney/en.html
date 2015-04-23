@@ -1,0 +1,186 @@
+<td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="5" border="0"></td>
+                 <td background="/i/steel_gray_bg.gif" class="statTextBig" colspan="7" height="18">&nbsp;Problem Statement for BettingMoney</td>
+                   
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td class="problemText" valign="middle" align="left">
+                      
+              		<table><tbody>
+<tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText">You run a gambling business in which people place bets on the margin of victory in a football game. At the end of the day, the company would like to know what the day's net gain has been.<br><br><br><br> Just as in any other betting system, people place certain amounts as their bets and if they guess correctly, they get their money back plus a pre-specified percentage of their bet; otherwise they lose the money they bet. <br><br><br><br> You are given a int[], <b>amounts</b>, the i<sup>th</sup> element of which is the number of dollars people have placed on a victory margin of i (i = 0 refers to the first element).  You are also given a int[], <b>centsPerDollar</b>, the i<sup>th</sup> element of which is the number of cents the company has to pay for every dollar the people bet on a victory margin of i, if the final outcome is a victory margin of i.  Finally, you are given an int, <b>finalResult</b>, which is the final margin of victory. You have to determine what the net gain for the day was and return the amount in cents.<br><br><br><br> For example, if <b>amounts</b> were {10,20,30}, it would mean that people placed $10 on a draw outcome, $20 on a victory margin of 1 and $30 on a victory margin of 2, and if <b>centsPerDollar</b> were {20,30,40}, it would mean the people would win 20 cents per dollar bet if the match were a draw, 30 cents per dollar if the victory margin were 1 and 40 cents per dollar if the victory margin were 2. <br><br><br><br> Suppose the final result is a victory margin of 1 (i.e., <b>finalResult</b> = 1). Then the people who guessed the outcome as a margin of 0 or 2 were wrong and the company receives the amounts they bet, $10+$30. However, the people who guessed that the outcome would be a margin of 1 were correct, and they receive money from the company according to the amount they bet (20 dollars) and the pre-set payoff percentage (30 cents per dollar) . This amounts to 20*30 = 600 cents. Hence, the day's net gain is 40 dollars - 600 cents = 3400 cents. You should return 3400.</td>
+</tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr>
+<td class="statText">Class:</td>
+<td class="statText">BettingMoney</td>
+</tr>
+<tr>
+<td class="statText">Method:</td>
+<td class="statText">moneyMade</td>
+</tr>
+<tr>
+<td class="statText">Parameters:</td>
+<td class="statText">int[], int[], int</td>
+</tr>
+<tr>
+<td class="statText">Returns:</td>
+<td class="statText">int</td>
+</tr>
+<tr>
+<td class="statText">Method signature:</td>
+<td class="statText">int moneyMade(int[] amounts, int[] centsPerDollar, int finalResult)</td>
+</tr>
+<tr><td colspan="2" class="statText">(be sure your method is public)</td></tr>
+</tbody></table></td>
+</tr>
+<tr><td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td class="statText"></td></tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">Keep in mind that it is not relevant which team wins. Only the margin of victory matters.</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">A victory margin of 0 and a draw are the same thing.</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">There are 100 cents in a dollar.</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">If the company has to pay more than it receives, the day's net gain will be negative.</td>
+</tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">
+<b>amounts</b> will contain between 1 and 50 elements, inclusive.</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">
+<b>centsPerDollar</b> will contain the same number of elements as <b>amounts</b>. </td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">
+<b>finalResult</b> will be between 0 and n-1, inclusive, where n is the number of elements in <b>amounts</b>.</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">Each element of <b>amounts</b> will be between 0 and 5000, inclusive.</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">Each element of <b>centsPerDollar</b> will be between 0 and 5000, inclusive.</td>
+</tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr>
+<tr>
+<td align="center" nowrap class="statText">0)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody>
+<tr><td class="statText"><pre>{10,20,30}</pre></td></tr>
+<tr><td class="statText"><pre>{20,30,40}</pre></td></tr>
+<tr><td class="statText"><pre>1</pre></td></tr>
+</tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 3400</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">The case explained in the problem statement above.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">1)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody>
+<tr><td class="statText"><pre>{200,300,100}</pre></td></tr>
+<tr><td class="statText"><pre>{10,10,10}</pre></td></tr>
+<tr><td class="statText"><pre>2</pre></td></tr>
+</tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 49000</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">The company gains 200+300 = 500 dollars from the people who bet on margins of 0 and 1. The company loses 100*10 = 1000 cents to the people who bet on a victory margin of 2. Hence, the net gain is 49000 cents.
+</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">2)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody>
+<tr><td class="statText"><pre>{100,100,100,100}</pre></td></tr>
+<tr><td class="statText"><pre>{5,5,5,5}</pre></td></tr>
+<tr><td class="statText"><pre>0</pre></td></tr>
+</tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 29500</pre></td></tr>
+<tr><td class="statText"></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">3)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody>
+<tr><td class="statText"><pre>{5000,5000}</pre></td></tr>
+<tr><td class="statText"><pre>{100,2}</pre></td></tr>
+<tr><td class="statText"><pre>0</pre></td></tr>
+</tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 0</pre></td></tr>
+<tr><td class="statText"></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">4)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody>
+<tr><td class="statText"><pre>{100}</pre></td></tr>
+<tr><td class="statText"><pre>{10}</pre></td></tr>
+<tr><td class="statText"><pre>0</pre></td></tr>
+</tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: -1000</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">The company doesn't gain anything! It has to pay the people who bet on the only outcome possible. It pays 100*10 cents. Hence, the net gain is -1000. (Negative indicates loss.)</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+</tbody></table>
+<hr>
+<p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2006, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="3" border="0"></td>
+                 <td background="/i/steel_blue_bg.gif" class="statText" colspan="7"><img src="/i/clear.gif" alt="" width="1" height="5" border="0"></td>
+                 <td class="statText" colspan="7"><img src="/i/clear.gif" alt="" width="1" height="16" border="0"></td>
+                 <td class="statText" colspan="7">
+                      This problem was used for:
+   
+   	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/tc?module=ProblemDetail&amp;rd=4775&amp;pm=2297">Single Round Match 191 Round 1 - Division II, Level One</a>
+   
+                   
+                   </td>
+                 

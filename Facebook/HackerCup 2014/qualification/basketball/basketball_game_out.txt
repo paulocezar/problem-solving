@@ -1,0 +1,20 @@
+Case #1: Doan Duc Gaurav John John Jordan Liang Rudradev Thomas Viswanath
+Case #2: Andrei Doan Ekansh Erling Fabien Zef
+Case #3: Atol Bhuwan Bhuwan Lin Nima Vladislav Voja Voja Yingsheng Zainab
+Case #4: Anil Lin Phil Ranjeeth Song Torbjorn
+Case #5: Andras Anh Doan Lingjuan Meihong Saransh Torbjorn Vladislav Vladislav Yingsheng
+Case #6: Amol Andrei Andrii Aravind David John Nima Paul Rudradev Vladislav
+Case #7: Anshuman Atol Paul Wai
+Case #8: Doan John
+Case #9: Anil Aravind Jan Jan Victor Viswanath
+Case #10: Erling Zejia
+Case #11: Ahmed Anshuman Jan Ranjeeth
+Case #12: Purav Slawek Wai Weiyan
+Case #13: Fabien Kittipat Liang Paul
+Case #14: Aravind Ekansh
+Case #15: Philip Tom Wesley Zhen
+Case #16: Anshuman Manohar Meihong Nima
+Case #17: Andriy Jan Lingjuan Wenjie Xiao Yingsheng
+Case #18: Lingjuan Zejia
+Case #19: Chirag Viswanath
+Case #20: Fabien Weiyan

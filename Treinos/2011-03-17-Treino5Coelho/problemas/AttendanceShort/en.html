@@ -1,0 +1,171 @@
+<td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="5" border="0"></td>
+                 <td background="/i/steel_gray_bg.gif" class="statTextBig" colspan="7" height="18">&nbsp;Problem Statement for AttendanceShort</td>
+                   
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td class="problemText" valign="middle" align="left">
+                      
+              		<table><tbody>
+<tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText">The students at your university have lately picked up the annoying habit of missing classes. To fix this problem your board has decided to only allow students with 75% or higher attendance to sit for the exams. Given a String[] <b>names</b> containing the students' names and a String[] <b>attendance</b> containing their attendance records, return the list of students who have less than 75% attendance.
+<br><br><br><br>
+The i<sup>th</sup> student's name is given as the i<sup>th</sup> element of <b>names</b> and his attendance record as the i<sup>th</sup> element of <b>attendance</b>. The attendance record corresponding to each student is specified as a string of 'A's, 'P's and 'M's. An 'A' indicates the students was absent for a class, whereas a 'P' means he was present and a 'M' means he was absent but he submitted a doctor's note for that class. If a student was absent for a class but submitted a doctor's note then that class is not counted when calculating his attendance percentage. Return a String[] containing the names of all the students who do not meet the attendance requirements. The names in the returned String[] should be in the same relative order as <b>names</b>.</td>
+</tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr>
+<td class="statText">Class:</td>
+<td class="statText">AttendanceShort</td>
+</tr>
+<tr>
+<td class="statText">Method:</td>
+<td class="statText">shortList</td>
+</tr>
+<tr>
+<td class="statText">Parameters:</td>
+<td class="statText">String[], String[]</td>
+</tr>
+<tr>
+<td class="statText">Returns:</td>
+<td class="statText">String[]</td>
+</tr>
+<tr>
+<td class="statText">Method signature:</td>
+<td class="statText">String[] shortList(String[] names, String[] attendance)</td>
+</tr>
+<tr><td colspan="2" class="statText">(be sure your method is public)</td></tr>
+</tbody></table></td>
+</tr>
+<tr><td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td class="statText"></td></tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">
+<b>names</b> will contain between 0 and 50 elements, inclusive.   </td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">
+<b>attendance</b> will contain the same number of elements as <b>names</b>.</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">Each element of <b>names</b> will contain between 1 and 50 characters, inclusive.</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">Each element of <b>attendance</b> will contain between 1 and 50 characters, inclusive.</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">Each element of <b>names</b> will contain only letters ('A' - 'Z' and 'a' - 'z').</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">Each element of <b>attendance</b> will contain only 'A', 'P' and 'M' characters.</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">Each element of <b>attendance</b> will contain at least one 'A' or 'P' character.</td>
+</tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr>
+<tr>
+<td align="center" nowrap class="statText">0)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody>
+<tr><td class="statText"><pre>{"Justin"}</pre></td></tr>
+<tr><td class="statText"><pre>{"PAAPP"}</pre></td></tr>
+</tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: {"Justin" }</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">Justin has attended 3 of his 5 classes which gives him 3/5 * 100 = 60% attendance. Since this is lower than 75% his name should be returned.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">1)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody>
+<tr><td class="statText"><pre>{"Justin","Chris"}</pre></td></tr>
+<tr><td class="statText"><pre>{"PAAPP","PPPPA"}</pre></td></tr>
+</tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: {"Justin" }</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">Chris has attended 4 out of his 5 classes and thus has 80% attendance. Justin has 60% so only Justin's name should be returned.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">2)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody>
+<tr><td class="statText"><pre>{"Sunny"}</pre></td></tr>
+<tr><td class="statText"><pre>{"PPPAM"}</pre></td></tr>
+</tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: { }</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">Sunny's attendance is effectively calculated from "PPPA" as classes which have a doctor's note are ignored. This results in a 75% attendance and so his name is not included in the returned list.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">3)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody>
+<tr><td class="statText"><pre>{"Mansi", "Arjun", "Nikhil", "Taneja"}</pre></td></tr>
+<tr><td class="statText"><pre>{"PPPPMPPAPP", "AAMAAPP", "PPPPAAP", "PPPAAAMPP"}</pre></td></tr>
+</tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: {"Arjun", "Nikhil", "Taneja" }</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText"></td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">4)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody>
+<tr><td class="statText"><pre>{}</pre></td></tr>
+<tr><td class="statText"><pre>{}</pre></td></tr>
+</tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: { }</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">Take care of the empty case.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+</tbody></table>
+<hr>
+<p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2006, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="3" border="0"></td>
+                 <td background="/i/steel_blue_bg.gif" class="statText" colspan="7"><img src="/i/clear.gif" alt="" width="1" height="5" border="0"></td>
+                 <td class="statText" colspan="7"><img src="/i/clear.gif" alt="" width="1" height="16" border="0"></td>
+                 <td class="statText" colspan="7">
+                      This problem was used for:
+   
+   	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/tc?module=ProblemDetail&amp;rd=10709&amp;pm=7777">Single Round Match 352 Round 1 - Division II, Level One</a>
+   
+                   
+                   </td>
+                 

@@ -1,0 +1,182 @@
+<td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="5" border="0"></td>
+                 <td background="/i/steel_gray_bg.gif" class="statTextBig" colspan="7" height="18">&nbsp;Problem Statement for BoxLoader</td>
+                   
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td class="problemText" valign="middle" align="left">
+                      
+              		<table><tbody>
+<tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText">
+<p>Your company has a new box loading robot. It is your job to program it to pack items into the shipping boxes. The robot does not have a very large program memory so you are restricted to placing all the items into the boxes in the same orientation. Each item is a rectangular solid with dimensions <b>itemX</b> by <b>itemY</b> by <b>itemZ</b>. The box is also rectangular with the dimensions <b>boxX</b> by <b>boxY</b> by <b>boxZ</b>. The items can be placed in the box in any orthogonal orientation (ie. the sides of the items must be parallel to the sides of the box), but only whole items can be placed in the box.
+Your task here is to determine the greatest number of items that can be packed into the box (with all the items in the same orientation).</p>
+
+<p>
+For example, if the box is 100x98x81 units and the items are 3x5x7 units, then orienting the items so they are 5x7x3, allows them to fit in the box in a 20x14x27 grid, filling the entire box, which is optimal: 7560 items.</p>
+</td>
+</tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr>
+<td class="statText">Class:</td>
+<td class="statText">BoxLoader</td>
+</tr>
+<tr>
+<td class="statText">Method:</td>
+<td class="statText">mostItems</td>
+</tr>
+<tr>
+<td class="statText">Parameters:</td>
+<td class="statText">int, int, int, int, int, int</td>
+</tr>
+<tr>
+<td class="statText">Returns:</td>
+<td class="statText">int</td>
+</tr>
+<tr>
+<td class="statText">Method signature:</td>
+<td class="statText">int mostItems(int boxX, int boxY, int boxZ, int itemX, int itemY, int itemZ)</td>
+</tr>
+<tr><td colspan="2" class="statText">(be sure your method is public)</td></tr>
+</tbody></table></td>
+</tr>
+<tr><td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td class="statText"></td></tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">There are six possible orientations for an item.</td>
+</tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">
+<b>boxX</b>, <b>boxY</b> and <b>boxZ</b> will be between 1 and 1000 inclusive.</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">
+<b>itemX</b>, <b>itemY</b> and <b>itemZ</b> will be between 1 and 1000 inclusive.</td>
+</tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr>
+<tr>
+<td align="center" nowrap class="statText">0)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody>
+<tr><td class="statText"><pre>100</pre></td></tr>
+<tr><td class="statText"><pre>98</pre></td></tr>
+<tr><td class="statText"><pre>81</pre></td></tr>
+<tr><td class="statText"><pre>3</pre></td></tr>
+<tr><td class="statText"><pre>5</pre></td></tr>
+<tr><td class="statText"><pre>7</pre></td></tr>
+</tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 7560</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">The example from above.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">1)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody>
+<tr><td class="statText"><pre>10</pre></td></tr>
+<tr><td class="statText"><pre>10</pre></td></tr>
+<tr><td class="statText"><pre>10</pre></td></tr>
+<tr><td class="statText"><pre>9</pre></td></tr>
+<tr><td class="statText"><pre>9</pre></td></tr>
+<tr><td class="statText"><pre>11</pre></td></tr>
+</tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 0</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">That's not going to fit!</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">2)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody>
+<tr><td class="statText"><pre>201</pre></td></tr>
+<tr><td class="statText"><pre>101</pre></td></tr>
+<tr><td class="statText"><pre>301</pre></td></tr>
+<tr><td class="statText"><pre>100</pre></td></tr>
+<tr><td class="statText"><pre>30</pre></td></tr>
+<tr><td class="statText"><pre>20</pre></td></tr>
+</tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 100</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">There is going to be some empty space in this box, as none of the box dimensions is an exact multiple of an item dimension. Orienting the items so that the 30 unit dimension goes in the box's 301 unit direction wastes the
+least space. 10 items can fit leaving only one unit of waste in that dimension.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">3)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody>
+<tr><td class="statText"><pre>913</pre></td></tr>
+<tr><td class="statText"><pre>687</pre></td></tr>
+<tr><td class="statText"><pre>783</pre></td></tr>
+<tr><td class="statText"><pre>109</pre></td></tr>
+<tr><td class="statText"><pre>93</pre></td></tr>
+<tr><td class="statText"><pre>53</pre></td></tr>
+</tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 833</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">A less obvious example of minimizing the wasted space.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">4)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody>
+<tr><td class="statText"><pre>6</pre></td></tr>
+<tr><td class="statText"><pre>5</pre></td></tr>
+<tr><td class="statText"><pre>4</pre></td></tr>
+<tr><td class="statText"><pre>3</pre></td></tr>
+<tr><td class="statText"><pre>2</pre></td></tr>
+<tr><td class="statText"><pre>1</pre></td></tr>
+</tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 20</pre></td></tr>
+<tr><td class="statText"></td></tr>
+</tbody></table></td>
+</tr>
+</tbody></table>
+<hr>
+<p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2006, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="3" border="0"></td>
+                 <td background="/i/steel_blue_bg.gif" class="statText" colspan="7"><img src="/i/clear.gif" alt="" width="1" height="5" border="0"></td>
+                 <td class="statText" colspan="7"><img src="/i/clear.gif" alt="" width="1" height="16" border="0"></td>
+                 <td class="statText" colspan="7">
+                      This problem was used for:
+   
+   	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/tc?module=ProblemDetail&amp;rd=4780&amp;pm=2403">Single Round Match 192 Round 1 - Division II, Level One</a>
+   
+                   
+                   </td>
+                 

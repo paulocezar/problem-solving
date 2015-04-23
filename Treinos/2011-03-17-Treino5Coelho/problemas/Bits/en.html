@@ -1,0 +1,136 @@
+<td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="5" border="0"></td>
+                 <td background="/i/steel_gray_bg.gif" class="statTextBig" colspan="7" height="18">&nbsp;Problem Statement for Bits</td>
+                   
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td class="problemText" valign="middle" align="left">
+                      
+              		<table><tbody>
+<tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText">Computers operate on binary numbers.  Almost all computation is done by
+manipulating 0's and 1's.  Thus, in order for computers to use the numbers we
+give them, they must convert them from base 10 (what we use normally) into
+binary (base 2).  It is sometimes useful to determine how many bits a number
+will take to represent, so that we can save memory.  For example, if a number
+is smaller than 256, we can represent it with 8 bits.
+<br><br><br><br>
+A binary number's value is determined as follows:
+For each '1' in the binary number add 2^i (2 to the power of i), where i is the
+number of digits to the right of the '1'.
+For example, 10100 binary, is equivalent to 20 in decimal.  The first 1 has 4
+digits to the right, so it is equivalent to 2^4 = 16.  The other 1 has two
+digits to the right of it, so it is 2^2 = 4.  16 + 4 = 20.  Another example is
+1111, whose base 10 equivalent is 2^3 + 2^2 + 2^1 + 2^0 = 8 + 4 + 2 + 1 = 15.
+<br><br><br><br>
+Your task is to write a method that, given an int, will determine the minimum
+number of bits that must be used to represent this number in binary.</td>
+</tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr>
+<td class="statText">Class:</td>
+<td class="statText">Bits</td>
+</tr>
+<tr>
+<td class="statText">Method:</td>
+<td class="statText">minBits</td>
+</tr>
+<tr>
+<td class="statText">Parameters:</td>
+<td class="statText">int</td>
+</tr>
+<tr>
+<td class="statText">Returns:</td>
+<td class="statText">int</td>
+</tr>
+<tr>
+<td class="statText">Method signature:</td>
+<td class="statText">int minBits(int n)</td>
+</tr>
+<tr><td colspan="2" class="statText">(be sure your method is public)</td></tr>
+</tbody></table></td>
+</tr>
+<tr><td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td class="statText"></td></tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">
+<b>n</b> is between 1 and 1,000,000, inclusive.</td>
+</tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr>
+<tr>
+<td align="center" nowrap class="statText">0)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody><tr><td class="statText"><pre>32</pre></td></tr></tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 6</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">32 in binary is 100000 because 2^5 = 32, so a 1 with 5 0's to its right is 32.
+Thus, we need 6 digits and the method return 6.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">1)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody><tr><td class="statText"><pre>12</pre></td></tr></tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 4</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">12 in binary is 1100, so the method returns 4.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">2)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody><tr><td class="statText"><pre>1</pre></td></tr></tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 1</pre></td></tr>
+<tr><td class="statText"></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">3)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody><tr><td class="statText"><pre>1500</pre></td></tr></tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 11</pre></td></tr>
+<tr><td class="statText"></td></tr>
+</tbody></table></td>
+</tr>
+</tbody></table>
+<hr>
+<p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2006, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="3" border="0"></td>
+                 <td background="/i/steel_blue_bg.gif" class="statText" colspan="7"><img src="/i/clear.gif" alt="" width="1" height="5" border="0"></td>
+                 <td class="statText" colspan="7"><img src="/i/clear.gif" alt="" width="1" height="16" border="0"></td>
+                 <td class="statText" colspan="7">
+                      This problem was used for:
+   
+   	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/tc?module=ProblemDetail&amp;rd=4100&amp;pm=520">Single Round Match 75 Round 1 - Division II, Level One</a>
+   
+   	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/tc?module=ProblemDetail&amp;rd=5852&amp;pm=520">Single Round Match 206 Round 1 - Division II, Level One</a>
+   
+                   
+                   </td>
+                 

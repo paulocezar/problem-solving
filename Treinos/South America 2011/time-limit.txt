@@ -1,0 +1,13 @@
+Problem Name 	Fullname 		Basename	Timelimit	Color
+1	A 	Army Buddies  		army		7 		black
+2	B 	Ball Stacking	  	ball		1	 	yellow
+3	C 	Candys Candy	  	candy		1 		red
+4	D 	Diccionário Portuñol  	diccionario	1 		green
+5	E 	Electrical Pollution  	electrical  	3 		white
+6	F 	File Retrieval  	file  		9 		indian red
+7	G 	Garden Fence  		garden  	14 		orange
+8	H 	Hedge Mazes 	 	hedge  		1 		grape
+9	I 	In Braille  		inbraille  	1 		cyan
+10	J 	Jupiter Attacks!  	jupiter  	5 		light purple
+11	K 	Kings Poker	  	king  		1		purple
+

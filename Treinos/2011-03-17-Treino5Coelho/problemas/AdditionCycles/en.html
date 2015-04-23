@@ -1,0 +1,128 @@
+<td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="5" border="0"></td>
+                 <td background="/i/steel_gray_bg.gif" class="statTextBig" colspan="7" height="18">&nbsp;Problem Statement for AdditionCycles</td>
+                   
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td class="problemText" valign="middle" align="left">
+                      
+              		<table><tbody>
+<tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText">
+<p>Start with any integer between 00 and 99, inclusive, written as two digits (use a leading zero if the number is less than 10).  Add the two digits together.  Now concatenate the rightmost digit of the first number with the rightmost digit of the sum to get a new number.  If you repeat this process enough times, you'll end up back at the original number.  For example:</p>
+<br><br><pre>			    Combine Second Digits of
+Start With    Add Digits    the Original and the Sum
+------------------------------------------------------
+    26     :   2+6 = 08   :   "6" and "8" = 68 
+    68     :   6+8 = 14   :   "8" and "4" = 84
+    84     :   8+4 = 12   :   "4" and "2" = 42
+    42     :   4+2 = 06   :   "2" and "6" = 26
+</pre>
+<p>In this case, it took us 4 steps to get back to where we started, so we would return 4.  Starting with <b>n</b>, return the number of steps it takes to get back to <b>n</b>.</p>
+</td>
+</tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr>
+<td class="statText">Class:</td>
+<td class="statText">AdditionCycles</td>
+</tr>
+<tr>
+<td class="statText">Method:</td>
+<td class="statText">cycleLength</td>
+</tr>
+<tr>
+<td class="statText">Parameters:</td>
+<td class="statText">int</td>
+</tr>
+<tr>
+<td class="statText">Returns:</td>
+<td class="statText">int</td>
+</tr>
+<tr>
+<td class="statText">Method signature:</td>
+<td class="statText">int cycleLength(int n)</td>
+</tr>
+<tr><td colspan="2" class="statText">(be sure your method is public)</td></tr>
+</tbody></table></td>
+</tr>
+<tr><td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td class="statText"></td></tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">
+<b>n</b> will be between 0 and 99, inclusive.</td>
+</tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr>
+<tr>
+<td align="center" nowrap class="statText">0)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody><tr><td class="statText"><pre>26</pre></td></tr></tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 4</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">The example from the problem statement.  It goes 26-&gt;68-&gt;84-&gt;42-&gt;26, so there's 4 steps for the cycle.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">1)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody><tr><td class="statText"><pre>55</pre></td></tr></tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 3</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">The cycle is 55-&gt;50-&gt;05-&gt;55.  Remember to treat numbers under 10 as though there was a leading zero.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">2)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody><tr><td class="statText"><pre>0</pre></td></tr></tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 1</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">Zero comes back to zero at every step - so the length of the cycle is one (00-&gt;00)</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">3)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody><tr><td class="statText"><pre>71</pre></td></tr></tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 12</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText"></td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+</tbody></table>
+<hr>
+<p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2006, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="3" border="0"></td>
+                 <td background="/i/steel_blue_bg.gif" class="statText" colspan="7"><img src="/i/clear.gif" alt="" width="1" height="5" border="0"></td>
+                 <td class="statText" colspan="7"><img src="/i/clear.gif" alt="" width="1" height="16" border="0"></td>
+                 <td class="statText" colspan="7">
+                      This problem was used for:
+   
+   	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/tc?module=ProblemDetail&amp;rd=10006&amp;pm=6736">Single Round Match 326 Round 1 - Division II, Level One</a>
+   
+                   
+                   </td>
+                 

@@ -1,0 +1,144 @@
+<td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="5" border="0"></td>
+                 <td background="/i/steel_gray_bg.gif" class="statTextBig" colspan="7" height="18">&nbsp;Problem Statement for BettingStrategy</td>
+                   
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="1" border="0"></td>
+                 <td class="problemText" valign="middle" align="left">
+                      
+              		<table><tbody>
+<tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText">
+<p>You are thinking of using the following betting strategy: in the first round, you bet one dollar.  If you win the bet, you win the dollar and bet another dollar in the next round.  Otherwise you lose the dollar and bet two dollars in the second round (provided you still have at least two dollars in your account).  If you win, you get the two dollars and bet one dollar in the third round, otherwise you lose the two dollars and bet four dollars in the third round (provided you have at least that amount in your account) and so on.  In other words, whenever you lose a bet, you double the value of the bet for the next round.  Whenever you win, the bet for the next round will be one dollar.</p>
+
+<p>For example, if you start with 10 dollars, and you win the bet in the first round, lose the bet in the next two rounds and then win the bet in the fourth round, you will end up with 10+1-1-2+4 = 12 dollars.</p>
+
+<p>You will be given an int <b>initSum</b> giving the amount of money you initially have.  You will also be given a String <b>outcome</b>.  The i<sup>th</sup> character of <b>outcome</b> will be either 'W' (win) or 'L' (lose), denoting the outcome of the i<sup>th</sup> round.  Return the amount of money you will have after all the rounds are played.  If at some point you don't have enough money in your account to cover the value of the bet, you must stop and return the sum you have at that point.</p>
+</td>
+</tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr>
+<td class="statText">Class:</td>
+<td class="statText">BettingStrategy</td>
+</tr>
+<tr>
+<td class="statText">Method:</td>
+<td class="statText">finalSum</td>
+</tr>
+<tr>
+<td class="statText">Parameters:</td>
+<td class="statText">int, String</td>
+</tr>
+<tr>
+<td class="statText">Returns:</td>
+<td class="statText">int</td>
+</tr>
+<tr>
+<td class="statText">Method signature:</td>
+<td class="statText">int finalSum(int initSum, String outcome)</td>
+</tr>
+<tr><td colspan="2" class="statText">(be sure your method is public)</td></tr>
+</tbody></table></td>
+</tr>
+<tr><td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td class="statText"></td></tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">
+<b>initSum</b> will be between 1 and 1000, inclusive.</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">
+<b>outcome</b> will contain between 1 and 50 characters, inclusive.</td>
+</tr>
+<tr>
+<td align="center" valign="top" class="statText">-</td>
+<td class="statText">Each character of <b>outcome</b> will be either 'W' or 'L'.</td>
+</tr>
+<tr><td colspan="2" class="statText">&nbsp;</td></tr>
+<tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr>
+<tr>
+<td align="center" nowrap class="statText">0)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody>
+<tr><td class="statText"><pre>12</pre></td></tr>
+<tr><td class="statText"><pre>"WWWWWWWW"</pre></td></tr>
+</tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 20</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">You are really lucky.  You win one dollar in each round, so you end up with 20 dollars.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">1)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody>
+<tr><td class="statText"><pre>15</pre></td></tr>
+<tr><td class="statText"><pre>"LLLWLLLL"</pre></td></tr>
+</tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 1</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">After losing 7 dollars in the first three rounds, you have just enough money to cover your bet for the fourth round.  You win 8 dollars in this round, but lose another 15 in the last four, so your final sum will be one dollar.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">2)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody>
+<tr><td class="statText"><pre>20</pre></td></tr>
+<tr><td class="statText"><pre>"WLWLWLWL"</pre></td></tr>
+</tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 23</pre></td></tr>
+<tr><td class="statText"><table><tbody><tr><td colspan="2" class="statText">You win one dollar in each odd numbered round and lose one dollar in the last round.</td></tr></tbody></table></td></tr>
+</tbody></table></td>
+</tr>
+<tr>
+<td align="center" nowrap class="statText">3)</td>
+<td class="statText"></td>
+</tr>
+<tr>
+<td class="statText">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="statText"><table><tbody>
+<tr><td class="statText"><table><tbody>
+<tr><td class="statText"><pre>925</pre></td></tr>
+<tr><td class="statText"><pre>"WLLLLLWLLLLLLWWWWWLWLLWLLLLLLWL"</pre></td></tr>
+</tbody></table></td></tr>
+<tr><td class="statText"><pre>Returns: 934</pre></td></tr>
+<tr><td class="statText"></td></tr>
+</tbody></table></td>
+</tr>
+</tbody></table>
+<hr>
+<p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2006, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>
+                 <td colspan="7"><img src="/i/clear.gif" alt="" width="1" height="3" border="0"></td>
+                 <td background="/i/steel_blue_bg.gif" class="statText" colspan="7"><img src="/i/clear.gif" alt="" width="1" height="5" border="0"></td>
+                 <td class="statText" colspan="7"><img src="/i/clear.gif" alt="" width="1" height="16" border="0"></td>
+                 <td class="statText" colspan="7">
+                      This problem was used for:
+   
+   	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/tc?module=ProblemDetail&amp;rd=10663&amp;pm=7421">Single Round Match 339 Round 1 - Division II, Level One</a>
+   
+                   
+                   </td>
+                 

@@ -1,0 +1,303 @@
+		Week #1:
+http://br.spoj.pl/problems/SOMA/			ad hoc
+http://br.spoj.pl/problems/PARPROX/			ad hoc
+http://br.spoj.pl/problems/PRIMO/			ad hoc
+http://br.spoj.pl/problems/ELEICOES/		ad hoc (sorting / STL Map)
+http://br.spoj.pl/problems/QUADRAD2/		ad hoc
+http://br.spoj.pl/problems/FATORIA2/		ad hoc
+http://br.spoj.pl/problems/FLIPERAM/		ad hoc (sorting)		
+http://br.spoj.pl/problems/PARIDADE/		ad hoc (base conversion)
+http://br.spoj.pl/problems/FATORIAL/		ad hoc (modular arithmetic)		
+http://br.spoj.pl/problems/F91/				ad hoc
+http://br.spoj.pl/problems/CALCULA/			ad hoc
+http://br.spoj.pl/problems/RUMO9S/			ad hoc (simple arithmetic)
+http://br.spoj.pl/problems/PAR/				ad hoc				
+http://br.spoj.pl/problems/FROTATAX/		ad hoc
+http://br.spoj.pl/problems/ONZE/			ad hoc (divisibility rules)
+
+		Week #2:
+http://br.spoj.pl/problems/OBIHANOI/		ad hoc
+http://br.spoj.pl/problems/BIT/				ad hoc (greedy)
+http://br.spoj.pl/problems/LUA/				ad hoc
+http://br.spoj.pl/problems/PLACAR/			ad hoc			
+http://br.spoj.pl/problems/ENCOTEL/			ad hoc
+http://br.spoj.pl/problems/POPULAR/			ad hoc	
+http://br.spoj.pl/problems/PAPRIMAS/		ad hoc (primality test)
+http://br.spoj.pl/problems/CFATORES/		ad hoc (prime factors)
+http://br.spoj.pl/problems/DOBRA/			ad hoc
+http://br.spoj.pl/problems/ESTAGIO/			ad hoc			
+http://br.spoj.pl/problems/BAFO/			ad hoc
+http://br.spoj.pl/problems/OBIPOKER/		ad hoc
+http://br.spoj.pl/problems/QUERM/			ad hoc
+http://br.spoj.pl/problems/COFRE/			ad hoc	
+http://br.spoj.pl/problems/NLOGONIA/		ad hoc
+
+		Week #3:
+http://br.spoj.pl/problems/FEYNMAN/			ad hoc		
+http://br.spoj.pl/problems/MESA/			graph theory (bipartite test)			
+http://br.spoj.pl/problems/AERO/			ad hoc			
+http://br.spoj.pl/problems/RECUPERA/		ad hoc
+http://br.spoj.pl/problems/SENHA/			ad hoc
+http://br.spoj.pl/problems/METEORO/			ad hoc
+http://br.spoj.pl/problems/MACACO/			ad hoc
+http://br.spoj.pl/problems/MINHOCA/			ad hoc
+http://br.spoj.pl/problems/OBITETRI/		ad hoc (sorting)
+http://br.spoj.pl/problems/VARETAS/			ad hoc
+http://br.spoj.pl/problems/PEDAGIO/			graph (BFS)
+http://br.spoj.pl/problems/BAPOSTAS/		greedy (max range sum)	
+http://br.spoj.pl/problems/COMCAMEL/		ad hoc (simple arithmetic, parsing)	
+http://br.spoj.pl/problems/LOTERIA/			ad hoc
+http://br.spoj.pl/problems/JASPION/			ad hoc (STL Map / hashing)
+
+		Week #4:
+http://br.spoj.pl/problems/POLEPOS/			ad hoc
+http://br.spoj.pl/problems/MIOJO/			simulation / number theory, chinese remainder`s theorem
+http://br.spoj.pl/problems/REDOTICA/		graph theory (Prim's Algorithm)		
+http://br.spoj.pl/problems/TESOURO/			DP (Subset Sum)
+http://br.spoj.pl/problems/SALDO/			ad hoc		
+http://br.spoj.pl/problems/DAMA/			ad hoc
+http://br.spoj.pl/problems/SORVETE/			ad hoc / sorting			
+http://br.spoj.pl/problems/PASSEIO/			graph (DFS)		
+http://br.spoj.pl/problems/ODDOREVE/		ad hoc		
+http://br.spoj.pl/problems/GENEAL/			graph (BFS), hash/STL Map
+http://br.spoj.pl/problems/MOEDAS/			DP (coin change)
+http://br.spoj.pl/problems/SUDOIME/			ad hoc
+http://br.spoj.pl/problems/DUENDE/			graph (BFS)
+http://br.spoj.pl/problems/RONTGEN/			ad hoc
+http://br.spoj.pl/problems/BIBLIO/			DP (Optimal BST)
+
+		Week #5:
+http://br.spoj.pl/problems/CONTAGEM/		ad hoc
+http://br.spoj.pl/problems/ORKUT/			graph (DFS)
+http://br.spoj.pl/problems/NUMERDOS/		graph (BFS)
+http://br.spoj.pl/problems/IMPEDIDO/		ad hoc
+http://br.spoj.pl/problems/MANUT/			graph (Articulation Point)		
+http://br.spoj.pl/problems/OBIDOMIN/		graph (Eulerian cycle/circuit test)		
+http://br.spoj.pl/problems/SUPERMER/		ad hoc (greedy, median)
+http://br.spoj.pl/problems/DENGUE/			graph (BFS)
+http://br.spoj.pl/problems/KRAKOVIA/		big num
+http://br.spoj.pl/problems/FUROS/			ad hoc
+http://br.spoj.pl/problems/TV/				ad hoc (matrix manipulation)
+http://br.spoj.pl/problems/JUNINA/			backtracking			
+http://br.spoj.pl/problems/VIVO/			ad hoc (simulation)		
+http://br.spoj.pl/problems/TRILHAS/			ad hoc			
+http://br.spoj.pl/problems/ENERGIA/			graph (BFS/DFS)
+
+		Week #6:
+http://br.spoj.pl/problems/CRIPTO/
+http://br.spoj.pl/problems/MINHOCA2/
+http://br.spoj.pl/problems/DESCULPA/
+http://br.spoj.pl/problems/CAIXEIRB/
+http://br.spoj.pl/problems/PENTA/
+http://br.spoj.pl/problems/SETUN/
+http://br.spoj.pl/problems/PARQUE/
+http://br.spoj.pl/problems/PAL/
+http://br.spoj.pl/problems/SANDUBA/
+http://br.spoj.pl/problems/DOMINO/
+http://br.spoj.pl/problems/CIPO/
+http://br.spoj.pl/problems/BURACOS/
+http://br.spoj.pl/problems/TIROS/
+http://br.spoj.pl/problems/POSLIVRE/
+http://br.spoj.pl/problems/ENGARRAF/
+
+		Week #7:
+http://br.spoj.pl/problems/ELETRICI/
+http://br.spoj.pl/problems/HIST/
+http://br.spoj.pl/problems/LOOPMUSI/
+http://br.spoj.pl/problems/DECADARI/
+http://br.spoj.pl/problems/ROUBA/
+http://br.spoj.pl/problems/PREEMPOS/
+http://br.spoj.pl/problems/NATUREZA/
+http://br.spoj.pl/problems/CAIXVIAJ/
+http://br.spoj.pl/problems/TEOBALDO/
+http://br.spoj.pl/problems/WCW/
+http://br.spoj.pl/problems/DEPENDEN/
+http://br.spoj.pl/problems/CRUZVERM/
+http://br.spoj.pl/problems/CAVALOS/
+http://br.spoj.pl/problems/DINOSTRA/
+http://br.spoj.pl/problems/TENTA/
+
+		Week #8:
+http://br.spoj.pl/problems/MINIMO/
+http://br.spoj.pl/problems/BRAIN/
+http://br.spoj.pl/problems/SUBPRIME/
+http://br.spoj.pl/problems/LASERR/
+http://br.spoj.pl/problems/ALADES/
+http://br.spoj.pl/problems/TROCCARD/
+http://br.spoj.pl/problems/TESOURO2/
+http://br.spoj.pl/problems/CAIXAS/
+http://br.spoj.pl/problems/CARDAPIO/
+http://br.spoj.pl/problems/BICHO/
+http://br.spoj.pl/problems/PSQF/
+http://br.spoj.pl/problems/VIZINHOS/
+http://br.spoj.pl/problems/COPA/
+http://br.spoj.pl/problems/MONAMAZ/
+http://br.spoj.pl/problems/BOLSA/
+
+		Week #9:
+http://br.spoj.pl/problems/CIRCUITO/
+http://br.spoj.pl/problems/APAGA/
+http://br.spoj.pl/problems/ENGENHAR/
+http://br.spoj.pl/problems/KOCH/
+http://br.spoj.pl/problems/SEQUENCI/
+http://br.spoj.pl/problems/BALDES/
+http://br.spoj.pl/problems/MARIO/
+http://br.spoj.pl/problems/TUBOS/
+http://br.spoj.pl/problems/BOLHAS/
+http://br.spoj.pl/problems/ZAK/
+http://br.spoj.pl/problems/CLUBE/
+http://br.spoj.pl/problems/VAMPIROS/
+http://br.spoj.pl/problems/DRAGSTER/
+http://br.spoj.pl/problems/FUTURE/
+http://br.spoj.pl/problems/QUASEMEN/
+
+		Week #10:
+http://br.spoj.pl/problems/EINSTEIN/
+http://br.spoj.pl/problems/CURSO/
+http://br.spoj.pl/problems/DIOFANTO/
+http://br.spoj.pl/problems/PAISES/
+http://br.spoj.pl/problems/CPCARROS/
+http://br.spoj.pl/problems/MARIENBA/
+http://br.spoj.pl/problems/ENERGIAT/
+http://br.spoj.pl/problems/DOCE/
+http://br.spoj.pl/problems/MARQUES/
+http://br.spoj.pl/problems/KOOPMANS/
+http://br.spoj.pl/problems/BABEL/
+http://br.spoj.pl/problems/FUTEBOL/
+http://br.spoj.pl/problems/FORRO/
+http://br.spoj.pl/problems/LKING/
+http://br.spoj.pl/problems/PENA/
+
+		Week #11:
+http://br.spoj.pl/problems/MEGADAMA/
+http://br.spoj.pl/problems/CAIXEIRO/
+http://br.spoj.pl/problems/LJUSTICA/
+http://br.spoj.pl/problems/REGISTRA/
+http://br.spoj.pl/problems/DVORONOI/
+http://br.spoj.pl/problems/PLACICPC/
+http://br.spoj.pl/problems/POLE/
+http://br.spoj.pl/problems/VOLEIBOL/
+http://br.spoj.pl/problems/GENERAL/
+http://br.spoj.pl/problems/GALOUVOL/
+http://br.spoj.pl/problems/SETEMARE/
+http://br.spoj.pl/problems/CUBOS/
+http://br.spoj.pl/problems/NOME/
+http://br.spoj.pl/problems/CALCULAD/
+http://br.spoj.pl/problems/BORABORA/
+
+		Week #12:
+http://br.spoj.pl/problems/ESPIRAL/
+http://br.spoj.pl/problems/ASSENTOS/
+http://br.spoj.pl/problems/CUBO/
+http://br.spoj.pl/problems/DNASUBSE/
+http://br.spoj.pl/problems/RTURCA/
+http://br.spoj.pl/problems/MAPABOLH/
+http://br.spoj.pl/problems/CAMBIG/
+http://br.spoj.pl/problems/TRAFEGO/
+http://br.spoj.pl/problems/POWERGEN/
+http://br.spoj.pl/problems/SAPATEIR/
+http://br.spoj.pl/problems/ICPC/
+http://br.spoj.pl/problems/ROTA/
+http://br.spoj.pl/problems/PBOMBEIR/
+http://br.spoj.pl/problems/ET/
+http://br.spoj.pl/problems/CORRIDA/
+
+		Week #13:
+http://br.spoj.pl/problems/BUGADA/
+http://br.spoj.pl/problems/TECLE/
+http://br.spoj.pl/problems/FLECHAS/
+http://br.spoj.pl/problems/BSUDO/
+http://br.spoj.pl/problems/QUADRADO/
+http://br.spoj.pl/problems/OLIMP/
+http://br.spoj.pl/problems/CEBOLA/
+http://br.spoj.pl/problems/RELATORI/
+http://br.spoj.pl/problems/MAPAS/
+http://br.spoj.pl/problems/ELASTICO/
+http://br.spoj.pl/problems/FORMULA/
+http://br.spoj.pl/problems/CONTRATO/
+http://br.spoj.pl/problems/IREVIR/
+http://br.spoj.pl/problems/PLAGIO/
+http://br.spoj.pl/problems/DESVIO/
+
+		Week #14:
+http://br.spoj.pl/problems/LOTICA/
+http://br.spoj.pl/problems/ELEVADOR/
+http://br.spoj.pl/problems/ROBOCOL/
+http://br.spoj.pl/problems/LCAIXA/
+http://br.spoj.pl/problems/VELHA/
+http://br.spoj.pl/problems/VOLEI/
+http://br.spoj.pl/problems/PISCINA/
+http://br.spoj.pl/problems/SET/
+http://br.spoj.pl/problems/SEQUE/
+http://br.spoj.pl/problems/ESPACO/
+http://br.spoj.pl/problems/TCELULA/
+http://br.spoj.pl/problems/GORE/
+http://br.spoj.pl/problems/PARADA/
+http://br.spoj.pl/problems/HASHADIQ/
+http://br.spoj.pl/problems/RAPREGUI/
+
+		Week #15:
+http://br.spoj.pl/problems/ORACULO/
+http://br.spoj.pl/problems/CANUBIS/
+http://br.spoj.pl/problems/BANFARAO/
+http://br.spoj.pl/problems/TRINCAS/
+http://br.spoj.pl/problems/ITMIHA/
+http://br.spoj.pl/problems/MCAIRO/
+http://br.spoj.pl/problems/PIRAMEDE/
+http://br.spoj.pl/problems/JINGLES/
+http://br.spoj.pl/problems/HOOLIGAN/
+http://br.spoj.pl/problems/IRMAOS/
+http://br.spoj.pl/problems/PRACAALI/
+http://br.spoj.pl/problems/ISOSCELE/
+http://br.spoj.pl/problems/OUTRACRI/
+http://br.spoj.pl/problems/KLINGON/
+http://br.spoj.pl/problems/CELETRIC/
+
+		Week #16:
+http://br.spoj.pl/problems/JGARCOM/
+http://br.spoj.pl/problems/JTACOGRA/
+http://br.spoj.pl/problems/JSEDEX/
+http://br.spoj.pl/problems/JPNEU/
+http://br.spoj.pl/problems/JESCADA/
+http://br.spoj.pl/problems/JDENTIST/
+http://br.spoj.pl/problems/PARREIRA/
+http://br.spoj.pl/problems/CONTA1/
+http://br.spoj.pl/problems/TIMES1/
+http://br.spoj.pl/problems/PEDAGIO1/
+http://br.spoj.pl/problems/FUSOES1/
+http://br.spoj.pl/problems/COPA1/
+http://br.spoj.pl/problems/CHAMADA1/
+http://br.spoj.pl/problems/MARCIAN1/
+http://br.spoj.pl/problems/COMETA2/
+
+		Week #17:
+http://br.spoj.pl/problems/ELEVADO2/
+http://br.spoj.pl/problems/REUNIAO2/
+http://br.spoj.pl/problems/TELESCO2/
+http://br.spoj.pl/problems/MATRIZ2/
+http://br.spoj.pl/problems/BATALHA2/
+http://br.spoj.pl/problems/FLOREST2/
+http://br.spoj.pl/problems/TRADUTO2/
+http://br.spoj.pl/problems/ALTAS2/
+http://br.spoj.pl/problems/DANCA1/
+http://br.spoj.pl/problems/EMOTIC/
+http://br.spoj.pl/problems/AMIGOS/
+http://br.spoj.pl/problems/KIDS10/
+http://br.spoj.pl/problems/FLOWER10/
+http://br.spoj.pl/problems/BINGO10/
+http://br.spoj.pl/problems/ANTS10/
+
+		Week #18:
+http://br.spoj.pl/problems/DIGITS10/
+http://br.spoj.pl/problems/JOLLO10/
+http://br.spoj.pl/problems/COCIRC10/
+http://br.spoj.pl/problems/MALFORMA/
+http://br.spoj.pl/problems/POLIGONO/
+http://br.spoj.pl/problems/REGATA/
+http://br.spoj.pl/problems/NEFER/
+http://br.spoj.pl/problems/CORDAISG/
+http://br.spoj.pl/problems/LISP/
+http://br.spoj.pl/problems/JUKEBOX/
+http://br.spoj.pl/problems/HYPER10/
+http://br.spoj.pl/problems/ARQUIVO/
+http://br.spoj.pl/problems/BASES/
