@@ -4,7 +4,11 @@
 
 using namespace std;
 
-mt19937 _eng(chrono::system_clock::now().time_since_epoch().count());
+#ifdef OFFLINE_TEST
+  mt19937 _eng(chrono::system_clock::now().time_since_epoch().count());
+#else
+  mt19937 _eng(1337);
+#endif
 
 class StarTraveller {
 public:
@@ -70,43 +74,85 @@ public:
     shuffle(star_order.begin(), star_order.end(), _eng);
     shuffle(ship_order.begin(), ship_order.end(), _eng);
 
+    int local_explorers = 0.4774 * (NShips - ships_sent);
+    vector<pair<int,pair<int,int>>> closest_star;
+
+    for (int j : ship_order) {
+      if (ships_sent == NShips) break;
+      if (ships[j] != moves[j]) continue;
+
+      int choose = -1;
+      for (int i : star_order) {
+        if (visited[i]) continue;
+        if ((choose == -1) || (dist[ships[j]][i] < dist[ships[j]][choose])) choose = i;
+      }
+      if (choose == -1) continue;
+      closest_star.push_back(make_pair(dist[ships[j]][choose], make_pair(j, choose)));
+    }
+
+    sort(closest_star.begin(), closest_star.end());
+
+    for (auto &local : closest_star) {
+      if (ships_sent == NShips) break;
+      if (!local_explorers) break;
+      int ship = local.second.first, star = local.second.second;
+      if (visited[star]) continue;
+      visited[star] = 1;
+      unvisited--;
+      moves[ship] = star;
+      ships_sent++;
+      local_explorers--;
+      #ifdef OFFLINE_TEST_DEBUG
+        cerr << "~~ SHIP " << ship << "(" << ships[ship] << ") goes to " << star << endl;
+      #endif
+    }
+
     int NUfos = ufos.size() / 3;
+    vector<int> ufo_goin(NStars, 0);
+
+    shuffle(ship_order.begin(), ship_order.end(), _eng);
 
     for (int i = 0; i < NUfos; ++i) {
-      if (ships_sent == NShips) break;
+      ufo_goin[ufos[3*i+1]] = 1;
+      ufo_goin[ufos[3*i+2]] = 1;
+      if (ships_sent == NShips) continue;
 
       int goin = ufos[3*i+1];
       if (visited[goin]) continue;
 
       for (int j : ship_order) {
         if (moves[j] != ships[j]) continue;
+        if (ships[j] != ufos[3*i]) continue;
 
-        if (ships[j] == ufos[3*i]) {
-          visited[goin] = 1;
-          unvisited--;
-          moves[j] = goin;
-          ships_sent++;
-          #ifdef OFFLINE_TEST_DEBUG
-            cerr << ":: SHIP " << j << "(" << ships[j] << ") goes to " << goin << endl;
-          #endif
-          break;
-        }
+        visited[goin] = 1;
+        unvisited--;
+        moves[j] = goin;
+        ships_sent++;
+        #ifdef OFFLINE_TEST_DEBUG
+          cerr << ":: SHIP " << j << "(" << ships[j] << ") goes to " << goin << endl;
+        #endif
+        break;
       }
     }
 
-    shuffle(ship_order.begin(), ship_order.end(), _eng);
-
     if (unvisited < (remaining_turns * NShips)) {
+      shuffle(ship_order.begin(), ship_order.end(), _eng);
+
+      int allowed_followers = 0.7337 * (NShips - ships_sent);
       for (int i = 0; i < NUfos; ++i) {
         if (ships_sent == NShips) break;
+        if (!allowed_followers) break;
 
         int next = ufos[3*i+2];
         if (visited[next]) continue;
 
         for (int j : ship_order) {
           if (moves[j] != ships[j]) continue;
+          if (ships[j] != ufos[3*i]) continue;
+
           moves[j] = ufos[3*i+1];
           ships_sent++;
+          allowed_followers--;
           #ifdef OFFLINE_TEST_DEBUG
             cerr << ">> SHIP " << j << "(" << ships[j] << ") goes to " << ufos[3*i+1] << endl;
           #endif
@@ -115,10 +161,14 @@ public:
       }
     }
 
+    shuffle(star_order.begin(), star_order.end(), _eng);
     shuffle(ship_order.begin(), ship_order.end(), _eng);
 
+    int explorers = 0.5 * (NShips - ships_sent);
+exploration:
     for (int i : star_order) {
       if (ships_sent == NShips) break;
+      if (!explorers) break;
       if (visited[i]) continue;
 
       int choose = -1;
@@ -131,8 +181,44 @@ public:
       unvisited--;
       moves[choose] = i;
       ships_sent++;
+      explorers--;
       #ifdef OFFLINE_TEST_DEBUG
         cerr << "!! SHIP " << choose << "(" << ships[choose] << ") goes to " << i << endl;
+      #endif
+    }
+    if (unvisited > (remaining_turns * NShips)) {
+      explorers = max(1.0, 0.5 * (NShips - ships_sent));
+      if (ships_sent < NShips) goto exploration;
+    }
+
+    shuffle(ship_order.begin(), ship_order.end(), _eng);
+    closest_star.resize(0);
+
+    for (int j : ship_order) {
+      if (ships_sent == NShips) break;
+      if (ships[j] != moves[j]) continue;
+
+      int choose = -1;
+      for (int i : star_order) {
+        if (visited[i] && !ufo_goin[i]) continue;
+        if ((choose == -1) || (dist[ships[j]][i] < dist[ships[j]][choose])) choose = i;
+      }
+      if (choose == -1) continue;
+      closest_star.push_back(make_pair(dist[ships[j]][choose], make_pair(j, choose)));
+    }
+
+    sort(closest_star.begin(), closest_star.end());
+
+    for (auto &local : closest_star) {
+      if (ships_sent == NShips) break;
+      int ship = local.second.first, star = local.second.second;
+      if (visited[star]) continue;
+      visited[star] = 1;
+      unvisited--;
+      moves[ship] = star;
+      ships_sent++;
+      #ifdef OFFLINE_TEST_DEBUG
+        cerr << "== SHIP " << ship << "(" << ships[ship] << ") goes to " << star << endl;
       #endif
     }
 
