@@ -28,7 +28,7 @@ void process() {
     }
   }
 
-  for (i = 0; i < N; i++) {
+  for (i = 0; i < N; ++i) {
     P[0][i] = parent[i];
     best[0][i] = pomekon[i];
   }
@@ -55,7 +55,7 @@ pair<int,int> query(int p, int q) {
 
   int res = 0;
   for (i = log; i >= 0; --i) {
-    if (L[p] - (1 << i) >= L[q]) {
+    if ((L[p] - (1 << i)) >= L[q]) {
       res = max(res, best[i][p]);
       p = P[i][p];
     }
@@ -66,7 +66,7 @@ pair<int,int> query(int p, int q) {
   }
 
   for (i = log; i >= 0; --i) {
-    if (P[i][p] != -1 && P[i][p] != P[i][q]) {
+    if ((P[i][p] != -1) && (P[i][p] != P[i][q])) {
       res = max(res, max(best[i][p], best[i][q]));
       p = P[i][p], q = P[i][q];
     }
@@ -95,7 +95,7 @@ int main(int argc, char* argv[]) {
   queue<int> q;
   q.push(0);
   parent[0] = 0;
-  L[0] = 0;
+  L[0] = 1;
   while (!q.empty()) {
     int u = q.front(); q.pop();
     for (auto &w : gr[u]) {
@@ -121,10 +121,11 @@ int main(int argc, char* argv[]) {
     cin >> u >> v;
     u--, v--;
     auto ans = query(u, v);
-    int w = L[u] + L[v] - 2 * L[ans.first] + 1;
+    int w = L[u] + L[v] - (2 * L[ans.first]) + 1;
     int c = ans.second;
     for (int kk = K; kk >= w; --kk) dp[kk] = max(dp[kk], dp[kk-w] + c);
   }
+  if (dp[K] == 0) dp[K] = -1;
 
   cout << dp[K] << "\n";
 
