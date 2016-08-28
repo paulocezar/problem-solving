@@ -7,151 +7,184 @@ using namespace std;
 
 const int MAXNODES = 1<<21;
 
-typedef struct item * pitem;
-
-struct item {
-  int prior, value, cnt;
-  int occ[26], first[26], last[26];
+struct node {
+  int prior, value, sz;
   bool rev;
-  pitem l, r;
+  int occ[26], first[26], last[26];
+  node *l, *r;
+
+  node(int val) {
+    prior = rand();
+    value = val;
+    sz = 1;
+    rev = false;
+    memset(occ, 0, sizeof(occ));
+    memset(first, 0, sizeof(first));
+    memset(last, 0, sizeof(last));
+    l = NULL; r = NULL;
+  }
 };
 
-int cnt(pitem it) {
-  return it ? it->cnt : 0;
+typedef node* pnode;
+
+int get_size(pnode t) {
+  return t == NULL ? 0 : t->sz;
 }
 
-void upd_cnt(pitem it) {
-  if (it) {
-    it->cnt = cnt(it->l) + cnt(it->r) + 1;
+void update(pnode t) {
+  if (t == NULL) return;
+  t->sz = get_size(t->l) + 1 + get_size(t->r);
 
-    int prev = 1 + cnt(it->l);
-    for (int i = 0; i < 26; ++i) {
-      it->occ[i] = 0, it->first[i] = 0, it->last[i] = 0;
-      if (it->l) {
-        it->occ[i] += it->l->occ[i];
-        it->first[i] = it->l->first[i];
-        it->last[i] = it->l->last[i];
-      }
+  int pos = get_size(t->l) + 1;
 
-      if (it->r) {
-        it->occ[i] += it->r->occ[i];
-        int fo = it->r->first[i];
-        int lo = it->r->last[i];
+  for (int i = 0; i < 26; ++i) {
+    t->occ[i] = 0;
+    t->first[i] = 0;
+    t->last[i] = 0;
 
-        if (fo) {
-          fo += prev;
-          lo += prev;
-          if (!(it->first[i])) {
-            it->first[i] = fo;
-          }
+    if (t->l) {
+      t->occ[i] = t->l->occ[i];
+      t->first[i] = t->l->first[i];
+      t->last[i] = t->l->last[i];
+    }
 
-          if (lo > it->last[i]) {
-            it->last[i] = lo;
-          }
+    if (t->r) {
+      t->occ[i] += t->r->occ[i];
+
+      int fo = t->r->first[i];
+      int lo = t->r->last[i];
+
+      if (fo) {
+        fo += pos;
+        lo += pos;
+
+        if (t->first[i] == 0) {
+          t->first[i] = fo;
+        }
+
+        if (lo > t->last[i]) {
+          t->last[i] = lo;
         }
       }
     }
-    it->occ[it->value]++;
-    if (!(it->first[it->value]) || (prev < (it->first[it->value]))) {
-      it->first[it->value] = prev;
-    }
-    if (prev > (it->last[it->value])) {
-      it->last[it->value] = prev;
+  }
+
+  t->occ[t->value]++;
+  if ((t->first[t->value] == 0) || (pos < t->first[t->value])) {
+    t->first[t->value] = pos;
+  }
+  if (pos > t->last[t->value]) {
+    t->last[t->value] = pos;
+  }
+}
+
+void push(pnode t) {
+  if (t == NULL || t->rev == false) return;
+  t->rev = false;
+  swap(t->l, t->r);
+  if (t->l) t->l->rev ^= true;
+  if (t->r) t->r->rev ^= true;
+
+  for (int i = 0; i < 26; ++i) {
+    swap(t->first[i], t->last[i]);
+    if (t->first[i]) {
+      t->first[i] = get_size(t) - t->first[i] + 1;
+      t->last[i] = get_size(t) - t->last[i] + 1;
     }
   }
 }
 
-void push(pitem it) {
-  if (it && it->rev) {
-    it->rev = false;
-    swap(it->l, it->r);
-    for (int i = 0; i < 26; ++i) {
-      swap(it->first[i], it->last[i]);
-      it->first[i] = cnt(it) - it->first[i] + 1;
-      it->last[i] = cnt(it) - it->last[i] + 1;
-    }
-    if (it->l) { it->l->rev = !(it->l->rev); }
-    if (it->r) { it->r->rev = !(it->r->rev); }
-  }
-}
-
-void merge(pitem &t, pitem l, pitem r) {
-  push(l);
-  push(r);
-
-  if (!l || !r) {
-    t = l ? l : r;
+void merge(pnode &t, pnode l, pnode r) {
+  push(l); push(r);
+  if (l == NULL) {
+    t = r;
+  } else if (r == NULL) {
+    t = l;
   } else if (l->prior > r->prior) {
-    merge(l->r, l->r, r),  t = l;
+    merge(l->r, l->r, r);
+    t = l;
   } else {
-    merge(r->l, l, r->l),  t = r;
+    merge(r->l, l, r->l);
+    t = r;
   }
-
-  upd_cnt(t);
+  update(t);
 }
 
-void split(pitem t, pitem &l, pitem &r, int key, int add = 0) {
-  if (!t) {
-    return void(l = r = 0);
-  }
+void split(pnode t, pnode &l, pnode &r, int pos, int add = 0) {
   push(t);
-  int cur_key = add + cnt(t->l);
-  if (key <= cur_key) {
-    split(t->l, l, t->l, key, add),  r = t;
-  } else {
-    split(t->r, t->r, r, key, add + 1 + cnt(t->l)),  l = t;
+  if (t == NULL) {
+    l = r = NULL;
+    return;
   }
-  upd_cnt(t);
+  int cur_pos = get_size(t->l) + 1 + add;
+  if (pos <= cur_pos) {
+    split(t->l, l, t->l, pos, add);
+    r = t;
+  } else {
+    split(t->r, t->r, r, pos, add + get_size(t->l) + 1);
+    l = t;
+  }
+  update(t);
 }
 
-void reverse(pitem t, int l, int r) {
-  pitem t1, t2, t3;
-  split(t, t1, t2, l-1);
-  split(t2, t2, t3, r-l+1);
-  t2->rev = !(t2->rev);
-  merge(t, t1, t2);
-  merge(t, t, t3);
+void reverse(pnode t, int l, int r) {
+  pnode a, b;
+  split(t, t, a, l);
+  split(a, a, b, r - l + 2);
+  a->rev ^= true;
+  merge(t, t, a);
+  merge(t, t, b);
 }
 
-int get_occ(pitem t, int l, int r, int val) {
-  pitem t1, t2, t3;
-  split(t, t1, t2, l-1);
-  split(t2, t2, t3, r-l+1);
-  int res = t2->occ[val];
-  merge(t, t1, t2);
-  merge(t, t, t3);
-  return res;
+int get_occ(pnode t, int val) {
+  if (t == NULL) return 0;
+  return t->occ[val];
 }
 
-pair<int,int> get_range(pitem t, int l, int r, int val) {
-  pitem t1, t2, t3;
-  split(t, t1, t2, l-1);
-  split(t2, t2, t3, r-l+1);
-  int fst = t2->first[val];
-  int lst = t2->last[val];
-  merge(t, t1, t2);
-  merge(t, t, t3);
-  if (!fst) fst = -1; else fst += l-1;
-  if (!lst) lst = -1; else lst += l-1;
+int get_occ(pnode t, int l, int r, int val) {
+  int ans;
+  pnode a, b;
+  split(t, t, a, l);
+  split(a, a, b, r - l + 2);
+  ans = get_occ(a, val);
+  merge(t, t, a);
+  merge(t, t, b);
+  return ans;
+}
+
+pair<int,int> get_range(pnode t, int val) {
+  if (t == NULL) return {-1, -1};
+  int fst = t->first[val];
+  int lst = t->last[val];
+  if (!fst) fst = -1, lst = -1;
   return {fst, lst};
 }
 
-void insert(pitem &t, int value, int pos){
-  pitem l, r;
-  pitem nt = new item();
-  nt->value = value;
-  nt->prior = rand();
-  nt->cnt = 1;
-  nt->occ[value] = 1;
-  nt->first[value] = 1;
-  nt->last[value] = 1;
-  split(t, l, r, pos-1);
-  merge(t, l, nt);
-  merge(t, t, r);
+pair<int,int> get_range(pnode t, int l, int r, int val) {
+  pair<int,int> ans;
+  pnode a, b;
+  split(t, t, a, l);
+  split(a, a, b, r - l + 2);
+  ans = get_range(a, val);
+  if (ans.first > 0) {
+    ans.first += l-1;
+    ans.second += l-1;
+  }
+  merge(t, t, a);
+  merge(t, t, b);
+  return ans;
+}
+
+void insert(pnode &t, int value, int pos){
+  pnode a;
+  pnode nt = new node(value);
+  split(t, t, a, pos);
+  merge(t, t, nt);
+  merge(t, t, a);
 }
 
 ostringstream out;
-void print(pitem t) {
+void print(pnode t) {
   if (!t) return;
   push(t);
   print(t->l);
@@ -169,10 +202,10 @@ int main(int argc, char* argv[]) {
   string s;
   cin >> s;
 
-  pitem treap = NULL;
+  pnode treap = NULL;
 
-  for (int i = 1; i <= L; ++i) {
-    insert(treap, s[i-1]-'a', i);
+  for (int i = 0; i < L; ++i) {
+    merge(treap, treap, new node(s[i]-'a'));
   }
 
   int op, l, r; string c;
@@ -183,20 +216,24 @@ int main(int argc, char* argv[]) {
     switch(op) {
       case 1:
         cin >> l >> r >> c;
+        if (l > r) swap(l, r);
         out << get_occ(treap, l, r, c[0]-'a') << "\n";
         break;
       case 2:
         cin >> l >> r >> c;
+        if (l > r) swap(l, r);
         ans = get_range(treap, l, r, c[0]-'a');
         if (ans.first == -1) { out << "-1\n"; }
         else { out << ans.first << " " << ans.second << "\n"; }
         break;
       case 3:
         cin >> l >> r;
+        if (l > r) swap(l, r);
         reverse(treap, l, r);
         break;
       case 4:
         cin >> l >> c;
+        L++;
         insert(treap, c[0]-'a', l);
         break;
     }
