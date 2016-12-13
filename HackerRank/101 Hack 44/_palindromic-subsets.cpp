@@ -65,7 +65,7 @@ void update(int node, int lo, int hi) {
   }
 }
 
-int cnt[ALPH_SIZE];
+int cnt[ALPH_SIZE], prf[ALPH_SIZE], suf[ALPH_SIZE];
 
 void get(int node, int lo, int hi) {
   push(node, lo == hi);
@@ -92,29 +92,21 @@ int64 fpw(int64 a, int b) {
   return res;
 }
 
-int64 C(int n, int k) {
-  if (n < k) return 0LL;
-  return (((fat[n] * ifat[n-k])%MOD) * ifat[k])%MOD;
-}
-
-int64 count_subsets(int cur = 0, bool odd = false) {
-  if (cur == ALPH_SIZE) return 1LL;
-
-  int64 res = 0LL;
-
-  for (int use = 0; use <= cnt[cur]; use += 2) {
-    res += (C(cnt[cur], use) * count_subsets(cur+1, odd)) % MOD;
-    if (res >= MOD) res -= MOD;
+int64 count_subsets() {
+  for (int i = 0; i < ALPH_SIZE; ++i) {
+    prf[i] = ((i ? prf[i-1] : 1) * fpw(2, max(0, cnt[i]-1))) % MOD;
+    suf[ALPH_SIZE-i-1] = ((i ? suf[ALPH_SIZE-i] : 1) * fpw(2, max(0, cnt[ALPH_SIZE-i-1]-1))) % MOD;
   }
 
-  if (!odd) {
-    for (int use = 1; use <= cnt[cur]; use += 2) {
-      res += (C(cnt[cur], use) * count_subsets(cur+1, true)) % MOD;
-      if (res >= MOD) res -= MOD;
-    }
+  int odd = 0;
+  for (int i = 0; i < ALPH_SIZE; ++i) {
+    auto cur = cnt[i] ? fpw(2, cnt[i]-1) : 0;
+    auto this_odd = ((((i ? prf[i-1] : 1) * cur) % MOD) * (((i+1) < ALPH_SIZE) ? suf[i+1] : 1)) % MOD;
+    odd += this_odd;
+    if (odd >= MOD) odd -= MOD;
   }
 
-  return res;
+  return (suf[0] + odd) % MOD;
 }
 
 int main(int argc, char* argv[]) {
@@ -126,13 +118,6 @@ int main(int argc, char* argv[]) {
   cin >> s;
 
   build(0, 0, n-1);
-
-  fat[0] = 1LL, ifat[0] = 1LL;
-  fat[1] = 1LL, ifat[1] = 1LL;
-  for (int i = 2; i <= n; ++i) {
-    fat[i] = (int64(i) * fat[i-1]) % MOD;
-    ifat[i] = fpw(fat[i], MOD-2);
-  }
 
   int cmd;
   while (q--) {
